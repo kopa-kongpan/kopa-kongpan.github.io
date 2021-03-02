@@ -6,7 +6,7 @@
   <link href="https://kopa-kongpan.github.io/atom.xml" rel="self"/>
   
   <link href="https://kopa-kongpan.github.io/"/>
-  <updated>2021-03-01T03:20:20.790Z</updated>
+  <updated>2021-03-02T11:14:05.751Z</updated>
   <id>https://kopa-kongpan.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>typora-vue-theme主题介绍</title>
+    <title>Front-matter</title>
     <link href="https://kopa-kongpan.github.io/2021/03/01/front-matter-xuan-xiang-xiang-jie/"/>
     <id>https://kopa-kongpan.github.io/2021/03/01/front-matter-xuan-xiang-xiang-jie/</id>
     <published>2021-03-01T03:02:07.000Z</published>
-    <updated>2021-03-01T03:20:20.790Z</updated>
+    <updated>2021-03-02T11:14:05.751Z</updated>
     
     
       
@@ -43,26 +43,25 @@
     
     
     
-    <category term="Liunx" scheme="https://kopa-kongpan.github.io/categories/Liunx/"/>
+    <category term="theme" scheme="https://kopa-kongpan.github.io/categories/theme/"/>
     
-    
-    <category term="linux常用命令" scheme="https://kopa-kongpan.github.io/tags/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
-    <title>typora-vue-theme主题介绍</title>
+    <title>linux常用命令</title>
     <link href="https://kopa-kongpan.github.io/2021/03/01/linux-ming-ling/"/>
     <id>https://kopa-kongpan.github.io/2021/03/01/linux-ming-ling/</id>
     <published>2021-03-01T03:00:07.000Z</published>
-    <updated>2021-03-01T03:11:32.767Z</updated>
+    <updated>2021-03-02T11:05:49.900Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;scp&quot;&gt;&lt;a href=&quot;#scp&quot; class=&quot;headerlink&quot; title=&quot;scp&quot;&gt;&lt;/a&gt;scp&lt;/h3&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h3 id=&quot;scp&quot;&gt;&lt;a href=&quot;#scp&quot; class=&quot;headerlink&quot; title=&quot;scp&quot;&gt;&lt;/a&gt;scp&lt;/h3&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
         
       
     
@@ -71,7 +70,28 @@
     <category term="Liunx" scheme="https://kopa-kongpan.github.io/categories/Liunx/"/>
     
     
-    <category term="linux常用命令" scheme="https://kopa-kongpan.github.io/tags/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+  </entry>
+  
+  <entry>
+    <title>linux常用命令</title>
+    <link href="https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/"/>
+    <id>https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/</id>
+    <published>2021-03-01T03:00:07.000Z</published>
+    <updated>2021-03-02T11:16:27.128Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;找不到mysqlclient&quot;&gt;&lt;a href=&quot;#找不到mysqlclient&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Liunx" scheme="https://kopa-kongpan.github.io/categories/Liunx/"/>
+    
     
   </entry>
   
