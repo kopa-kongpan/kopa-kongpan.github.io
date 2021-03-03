@@ -49,6 +49,29 @@
   </entry>
   
   <entry>
+    <title>django中pymysql问题</title>
+    <link href="https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/"/>
+    <id>https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/</id>
+    <published>2021-03-01T03:00:07.000Z</published>
+    <updated>2021-03-03T03:45:40.848Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;找不到mysqlclient&quot;&gt;&lt;a href=&quot;#找不到mysqlclient&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://kopa-kongpan.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>linux常用命令</title>
     <link href="https://kopa-kongpan.github.io/2021/03/01/linux-ming-ling/"/>
     <id>https://kopa-kongpan.github.io/2021/03/01/linux-ming-ling/</id>
@@ -62,29 +85,6 @@
         
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
 &lt;h3 id=&quot;scp&quot;&gt;&lt;a href=&quot;#scp&quot; class=&quot;headerlink&quot; title=&quot;scp&quot;&gt;&lt;/a&gt;scp&lt;/h3&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="Liunx" scheme="https://kopa-kongpan.github.io/categories/Liunx/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>linux常用命令</title>
-    <link href="https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/"/>
-    <id>https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/</id>
-    <published>2021-03-01T03:00:07.000Z</published>
-    <updated>2021-03-02T11:16:27.128Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;找不到mysqlclient&quot;&gt;&lt;a href=&quot;#找不到mysqlclient&quot; class=&quot;headerlink&quot;</summary>
         
       
     
