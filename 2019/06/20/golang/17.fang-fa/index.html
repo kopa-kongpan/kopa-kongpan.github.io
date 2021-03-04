@@ -1094,6 +1094,33 @@ perimeter method output: 30<span aria-hidden="true" class="line-numbers-rows"><s
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'dcb5e20f4bc27477be14',
+        clientSecret: 'b44707072ff1190bc757a872b9e0c7cee3aa4b3f',
+        repo: 'gitalk',
+        owner: 'kopa-kongpan',
+        admin: "kopa-kongpan",
+        id: '2019-06-20T10-18-24',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
 
     
 
