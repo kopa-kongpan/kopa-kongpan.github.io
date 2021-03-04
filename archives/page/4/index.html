@@ -466,7 +466,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/06/17/golang/32.panic-he-recover/">
+                        <a href="/2019/06/17/golang/34.fan-she/">
                             <div class="card-image">
                                 
                                 
@@ -478,8 +478,15 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    32. panic 和 recover什么是 panic？在 Go 语言中，程序中一般是使用[错误]来处理异常情况。对于程序中出现的大部分异常情况，错误就已经够用了。
-但在有些情况，当程序发生异常时，无法继续运行。在这种情况下，我们会使用 
+                                    34. 反射反射是 Go 语言的高级主题之一。
+分为如下小节。
+
+什么是反射？
+为何需要检查变量，确定变量的类型？
+reflect 包
+reflect.Type 和 reflect.Value
+reflect.Kind
+NumField()
                                 
                             </div>
                             <div class="publish-info">
@@ -516,7 +523,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/06/17/golang/34.fan-she/">
+                        <a href="/2019/06/17/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/">
                             <div class="card-image">
                                 
                                 
@@ -528,15 +535,20 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    34. 反射反射是 Go 语言的高级主题之一。
-分为如下小节。
+                                    33. 函数是一等公民（头等函数）现在简单概括一下本教程讨论的内容：
 
-什么是反射？
-为何需要检查变量，确定变量的类型？
-reflect 包
-reflect.Type 和 reflect.Value
-reflect.Kind
-NumField()
+什么是头等函数？
+匿名函数
+用户自定义的函数类型
+高阶函数
+把函数作为参数，传递给其它函数
+在其它函数中返回函数
+
+
+闭包
+头等函数的实际用途
+
+什么是头等函数？支持头
                                 
                             </div>
                             <div class="publish-info">

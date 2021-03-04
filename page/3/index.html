@@ -399,7 +399,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/06/17/golang/22.xin-dao-channel/">
+                    <a href="/2019/06/17/golang/24.select/">
                         <div class="card-image">
                             
                             
@@ -412,8 +412,42 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                22. 信道（channel）什么是信道？信道可以想像成 Go 协程之间通信的管道。如同管道中的水会从一端流到另一端，通过使用信道，数据也可以从一端发送，在另一端接收。  
-信道的声明所有信道都关联了一个类型。信道只能运输这种类型的数据，而
+                                24. Select什么是 select？select 语句用于在多个发送/接收信道操作中进行选择。select 语句会一直阻塞，直到发送/接收操作准备就绪。如果有多个信道操作准备完毕，select 会随机地选取其中之一执行。该语法与 sw
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-17
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                kopa
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/06/17/golang/25.mutex/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                25. Mutex临界区在学习 Mutex 之前，我们需要理解并发编程中临界区（Critical Section）的概念。当程序并发地运行时，多个 [Go 协程]不应该同时访问那些修改共享资源的代码。这些修改共享资源的代码称为临界区。例如，
                             
                         </div>
                         <div class="publish-info">
@@ -471,7 +505,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/06/17/golang/24.select/">
+                    <a href="/2019/06/17/golang/22.xin-dao-channel/">
                         <div class="card-image">
                             
                             
@@ -484,43 +518,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                24. Select什么是 select？select 语句用于在多个发送/接收信道操作中进行选择。select 语句会一直阻塞，直到发送/接收操作准备就绪。如果有多个信道操作准备完毕，select 会随机地选取其中之一执行。该语法与 sw
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                kopa
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/06/17/golang/27.zu-he-qu-dai-ji-cheng/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                27. 组合取代继承Go 不支持继承，但它支持组合（Composition）。组合一般定义为“合并在一起”。汽车就是一个关于组合的例子：一辆汽车由车轮、引擎和其他各种部件组合在一起。
-通过嵌套结构体进行组合在 Go 中，通过在结构体内嵌套结
+                                22. 信道（channel）什么是信道？信道可以想像成 Go 协程之间通信的管道。如同管道中的水会从一端流到另一端，通过使用信道，数据也可以从一端发送，在另一端接收。  
+信道的声明所有信道都关联了一个类型。信道只能运输这种类型的数据，而
                             
                         </div>
                         <div class="publish-info">
@@ -579,7 +578,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/06/17/golang/25.mutex/">
+                    <a href="/2019/06/17/golang/27.zu-he-qu-dai-ji-cheng/">
                         <div class="card-image">
                             
                             
@@ -592,7 +591,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                25. Mutex临界区在学习 Mutex 之前，我们需要理解并发编程中临界区（Critical Section）的概念。当程序并发地运行时，多个 [Go 协程]不应该同时访问那些修改共享资源的代码。这些修改共享资源的代码称为临界区。例如，
+                                27. 组合取代继承Go 不支持继承，但它支持组合（Composition）。组合一般定义为“合并在一起”。汽车就是一个关于组合的例子：一辆汽车由车轮、引擎和其他各种部件组合在一起。
+通过嵌套结构体进行组合在 Go 中，通过在结构体内嵌套结
                             
                         </div>
                         <div class="publish-info">
@@ -725,7 +725,7 @@ import
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/06/17/golang/31.zi-ding-yi-cuo-wu/">
+                    <a href="/2019/06/17/golang/32.panic-he-recover/">
                         <div class="card-image">
                             
                             
@@ -738,8 +738,8 @@ import
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                31. 自定义错误使用 New 函数创建自定义错误创建自定义错误最简单的方法是使用 [errors]包中的 [New]函数。
-在使用 New [函数]创建自定义错误之前，我们先来看看 New 是如何实现的。如下所示，是 [errors 包]
+                                32. panic 和 recover什么是 panic？在 Go 语言中，程序中一般是使用[错误]来处理异常情况。对于程序中出现的大部分异常情况，错误就已经够用了。
+但在有些情况，当程序发生异常时，无法继续运行。在这种情况下，我们会使用 
                             
                         </div>
                         <div class="publish-info">
@@ -761,7 +761,7 @@ import
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/06/17/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/">
+                    <a href="/2019/06/17/golang/31.zi-ding-yi-cuo-wu/">
                         <div class="card-image">
                             
                             
@@ -774,20 +774,8 @@ import
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                33. 函数是一等公民（头等函数）现在简单概括一下本教程讨论的内容：
-
-什么是头等函数？
-匿名函数
-用户自定义的函数类型
-高阶函数
-把函数作为参数，传递给其它函数
-在其它函数中返回函数
-
-
-闭包
-头等函数的实际用途
-
-什么是头等函数？支持头
+                                31. 自定义错误使用 New 函数创建自定义错误创建自定义错误最简单的方法是使用 [errors]包中的 [New]函数。
+在使用 New [函数]创建自定义错误之前，我们先来看看 New 是如何实现的。如下所示，是 [errors 包]
                             
                         </div>
                         <div class="publish-info">
