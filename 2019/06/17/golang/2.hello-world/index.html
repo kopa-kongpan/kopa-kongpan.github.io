@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,23 +308,10 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
 
 
 
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,16 +462,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-06-17
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    859
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -503,25 +513,25 @@
 <p>所有 Go 源文件都应该放置在工作区里的 <strong>src</strong> 目录下。请在刚添加的 <strong>go</strong> 目录下面创建目录 <strong>src</strong>。</p>
 <p>所有 Go 项目都应该依次在 src 里面设置自己的子目录。我们在 src 里面创建一个目录 <strong>hello</strong> 来放置整个 hello world 项目。</p>
 <p>创建上述目录之后，其目录结构如下：</p>
-<pre><code>go
+<pre class="line-numbers language-none"><code class="language-none">go
   src
-    hello
-</code></pre>
+    hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>在我们刚刚创建的 hello 目录下，在 <strong>helloworld.go</strong> 文件里保存下面的程序。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>创建该程序之后，其目录结构如下：</p>
-<pre><code>go
+<pre class="line-numbers language-none"><code class="language-none">go
   src
     hello
-      helloworld.go
-</code></pre>
+      helloworld.go<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="运行-Go-程序"><a href="#运行-Go-程序" class="headerlink" title="运行 Go 程序"></a>运行 Go 程序</h2><p>运行 Go 程序有多种方式，我们下面依次介绍。</p>
 <p>1.使用 <strong>go run</strong> 命令 - 在命令提示符旁，输入 <code>go run workspacepath/src/hello/helloworld.go</code>。</p>
 <p>上述命令中的 <strong>workspacepath</strong> 应该替换为你自己的工作区路径（Windows 下的 <strong>C:/Users/YourName/go</strong>，Linux 或 Mac 下的 <strong>$HOME/go</strong>）。</p>
@@ -529,23 +539,23 @@
 <p>2.使用 <strong>go install</strong> 命令 - 运行 <code>go install hello</code>，接着可以用 <code>workspacepath/bin/hello</code> 来运行该程序。</p>
 <p>上述命令中的 <strong>workspacepath</strong> 应该替换为你自己的工作区路径（Windows 下的 <strong>C:/Users/YourName/go</strong>，Linux 或 Mac 下的 <strong>$HOME/go</strong>）。</p>
 <p>当你输入 <strong>go install hello</strong> 时，go 工具会在工作区中搜索 hello 包（hello 称之为包，我们后面会更加详细地讨论包）。接下来它会在工作区的 bin 目录下，创建一个名为 <code>hello</code>（Windows 下名为 <code>hello.exe</code>）的二进制文件。运行 <strong>go install hello</strong> 后，其目录结构如下所示：</p>
-<pre><code>go
+<pre class="line-numbers language-none"><code class="language-none">go
   bin
     hello
   src
     hello
-      helloworld.go
-</code></pre>
+      helloworld.go<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>3.第 3 种运行程序的好方法是使用 go playground。尽管它有自身的限制，但该方法对于运行简单的程序非常方便。我已经在 playground 上创建了一个 hello world 程序。<a target="_blank" rel="noopener" href="https://play.golang.org/p/VtXafkQHYe">点击这里</a> 在线运行程序。 你可以使用 <a target="_blank" rel="noopener" href="https://play.golang.org/">go playground</a> 与其他人分享你的源代码。</p>
 <h3 id="简述-hello-world-程序"><a href="#简述-hello-world-程序" class="headerlink" title="简述 hello world 程序"></a>简述 hello world 程序</h3><p>下面就是我们刚写下的 hello world 程序。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main <span class="token comment" spellcheck="true">//1</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main <span class="token comment">//1</span>
 
-<span class="token keyword">import</span> <span class="token string">"fmt"</span> <span class="token comment" spellcheck="true">//2</span>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span> <span class="token comment">//2</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//3  </span>
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//4</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//3  </span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span> <span class="token comment">//4</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>现在简单介绍每一行大概都做了些什么，在以后的教程中还会深入探讨每个部分。</p>
 <p><strong>package main - 每一个 Go 文件都应该在开头进行 package name 的声明</strong>（译注：只有可执行程序的包名应当为 main）。包（Packages）用于代码的封装与重用，这里的包名称是<code>main</code>。</p>
 <p><strong>import “fmt”</strong> - 我们引入了 fmt 包，用于在 main 函数里面打印文本到标准输出。</p>
@@ -638,8 +648,136 @@
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -668,7 +806,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="变量">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="变量">
                         
                         <span class="card-title">变量</span>
                     </div>
@@ -717,7 +855,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="go介绍与安装">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="go介绍与安装">
                         
                         <span class="card-title">go介绍与安装</span>
                     </div>
@@ -942,13 +1080,16 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -977,9 +1118,9 @@
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1201,7 +1342,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

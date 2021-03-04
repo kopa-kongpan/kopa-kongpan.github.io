@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,23 +308,10 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
 
 
 
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,16 +462,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-06-18
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.2k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -501,169 +511,169 @@
 <p>如上图所示，变量 <code>b</code> 的值为 <code>156</code>，而 <code>b</code> 的内存地址为 <code>0x1040a124</code>。变量 <code>a</code> 存储了 <code>b</code> 的地址。我们就称 <code>a</code> 指向了 <code>b</code>。</p>
 <h3 id="指针的声明"><a href="#指针的声明" class="headerlink" title="指针的声明"></a>指针的声明</h3><p>指针变量的类型为 *<strong>T</strong>，该指针指向一个 <strong>T</strong> 类型的变量。</p>
 <p>接下来我们写点代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     b <span class="token operator">:=</span> <span class="token number">255</span>
     <span class="token keyword">var</span> a <span class="token operator">*</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>b
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Type of a is %T\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"address of b is"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>&amp;</strong> 操作符用于获取变量的地址。上面程序的第 9 行我们把 <code>b</code> 的地址赋值给 <strong>int</strong> 类型的 <code>a</code>。我们称 <code>a</code> 指向了 <code>b</code>。当我们打印 <code>a</code> 的值时，会打印出 <code>b</code> 的地址。程序将输出：</p>
-<pre><code>Type of a is *int  
-address of b is 0x1040a124
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Type of a is *int  
+address of b is 0x1040a124<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>由于 b 可能处于内存的任何位置，你应该会得到一个不同的地址。</p>
 <h3 id="指针的零值（Zero-Value）"><a href="#指针的零值（Zero-Value）" class="headerlink" title="指针的零值（Zero Value）"></a>指针的零值（Zero Value）</h3><p>指针的零值是 <code>nil</code>。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     a <span class="token operator">:=</span> <span class="token number">25</span>
     <span class="token keyword">var</span> b <span class="token operator">*</span><span class="token builtin">int</span>
-    <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"b is"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span>
         b <span class="token operator">=</span> <span class="token operator">&amp;</span>a
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"b after initialization is"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面的程序中，<code>b</code> 初始化为 <code>nil</code>，接着将 <code>a</code> 的地址赋值给 <code>b</code>。程序会输出：</p>
-<pre><code>b is &lt;nil&gt;  
-b after initialisation is 0x1040a124
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">b is &lt;nil&gt;  
+b after initialisation is 0x1040a124<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="指针的解引用"><a href="#指针的解引用" class="headerlink" title="指针的解引用"></a>指针的解引用</h3><p>指针的解引用可以获取指针所指向的变量的值。将 <code>a</code> 解引用的语法是 <code>*a</code>。</p>
 <p>通过下面的代码，可以看到如何使用解引用。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main  
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     b <span class="token operator">:=</span> <span class="token number">255</span>
     a <span class="token operator">:=</span> <span class="token operator">&amp;</span>b
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"address of b is"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"value of b is"</span><span class="token punctuation">,</span> <span class="token operator">*</span>a<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序的第 10 行，我们将 <code>a</code> 解引用，并打印了它的值。不出所料，我们会打印出 <code>b</code> 的值。程序会输出：</p>
-<pre><code>address of b is 0x1040a124  
-value of b is 255
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">address of b is 0x1040a124  
+value of b is 255<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>我们再编写一个程序，用指针来修改 b 的值。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     b <span class="token operator">:=</span> <span class="token number">255</span>
     a <span class="token operator">:=</span> <span class="token operator">&amp;</span>b
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"address of b is"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"value of b is"</span><span class="token punctuation">,</span> <span class="token operator">*</span>a<span class="token punctuation">)</span>
     <span class="token operator">*</span>a<span class="token operator">++</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"new value of b is"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序的第 12 行中，我们把 <code>a</code> 指向的值加 1，由于 <code>a</code> 指向了 <code>b</code>，因此 <code>b</code> 的值也发生了同样的改变。于是 <code>b</code> 的值变为 256。程序会输出：</p>
-<pre><code>address of b is 0x1040a124  
+<pre class="line-numbers language-none"><code class="language-none">address of b is 0x1040a124  
 value of b is 255  
-new value of b is 256
-</code></pre>
-<h3 id="向函数传递指针参数"><a href="#向函数传递指针参数" class="headerlink" title="向函数传递指针参数"></a>向函数传递指针参数</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+new value of b is 256<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="向函数传递指针参数"><a href="#向函数传递指针参数" class="headerlink" title="向函数传递指针参数"></a>向函数传递指针参数</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">change</span><span class="token punctuation">(</span>val <span class="token operator">*</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">change</span><span class="token punctuation">(</span>val <span class="token operator">*</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token operator">*</span>val <span class="token operator">=</span> <span class="token number">55</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     a <span class="token operator">:=</span> <span class="token number">58</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"value of a before function call is"</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
     b <span class="token operator">:=</span> <span class="token operator">&amp;</span>a
     <span class="token function">change</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"value of a after function call is"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序中的第 14 行，我们向函数 <code>change</code> 传递了指针变量 <code>b</code>，而 <code>b</code> 存储了 <code>a</code> 的地址。程序的第 8 行在 <code>change</code> 函数内使用解引用，修改了 a 的值。该程序会输出：</p>
-<pre><code>value of a before function call is 58  
-value of a after function call is 55
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">value of a before function call is 58  
+value of a after function call is 55<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="不要向函数传递数组的指针，而应该使用切片"><a href="#不要向函数传递数组的指针，而应该使用切片" class="headerlink" title="不要向函数传递数组的指针，而应该使用切片"></a>不要向函数传递数组的指针，而应该使用切片</h3><p>假如我们想要在函数内修改一个数组，并希望调用函数的地方也能得到修改后的数组，一种解决方案是把一个指向数组的指针传递给这个函数。 </p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">modify</span><span class="token punctuation">(</span>arr <span class="token operator">*</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">modify</span><span class="token punctuation">(</span>arr <span class="token operator">*</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token punctuation">(</span><span class="token operator">*</span>arr<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">90</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">91</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">91</span><span class="token punctuation">&#125;</span>
     <span class="token function">modify</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序的第 13 行中，我们将数组的地址传递给了 <code>modify</code> 函数。在第 8 行，我们在 <code>modify</code> 函数里把 <code>arr</code> 解引用，并将 <code>90</code> 赋值给这个数组的第一个元素。程序会输出 <code>[90 90 91]</code>。</p>
 <p>*<em>a[x] 是 (\</em>a)[x] 的简写形式，因此上面代码中的 (*arr)[0] 可以替换为 arr[0]**。下面我们用简写形式重写以上代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">modify</span><span class="token punctuation">(</span>arr <span class="token operator">*</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">modify</span><span class="token punctuation">(</span>arr <span class="token operator">*</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">90</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">91</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">91</span><span class="token punctuation">&#125;</span>
     <span class="token function">modify</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>该程序也会输出 <code>[90 90 91]</code>。</p>
 <p><strong>这种方式向函数传递一个数组指针参数，并在函数内修改数组。尽管它是有效的，但却不是 Go 语言惯用的实现方式。我们最好使用切片来处理。</strong></p>
 <p>接下来我们用[切片]来重写之前的代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">modify</span><span class="token punctuation">(</span>sls <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">modify</span><span class="token punctuation">(</span>sls <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     sls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">90</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">91</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">91</span><span class="token punctuation">&#125;</span>
     <span class="token function">modify</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序的第 13 行，我们将一个切片传递给了 <code>modify</code> 函数。在 <code>modify</code> 函数中，我们把切片的第一个元素修改为 <code>90</code>。程序也会输出 <code>[90 90 91]</code>。<strong>所以别再传递数组指针了，而是使用切片吧</strong>。上面的代码更加简洁，也更符合 Go 语言的习惯。</p>
 <h3 id="Go-不支持指针运算"><a href="#Go-不支持指针运算" class="headerlink" title="Go 不支持指针运算"></a>Go 不支持指针运算</h3><p>Go 并不支持其他语言（例如 C）中的指针运算。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    b <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">109</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    b <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token number">109</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">&#125;</span>
     p <span class="token operator">:=</span> <span class="token operator">&amp;</span>b
     p<span class="token operator">++</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面的程序会抛出编译错误：*<em>main.go:6: invalid operation: p++ (non-numeric type \</em>[3]int)**。</p>
 
                 
@@ -752,8 +762,136 @@ value of a after function call is 55
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -782,7 +920,7 @@ value of a after function call is 55
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="golang目录">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="golang目录">
                         
                         <span class="card-title">golang目录</span>
                     </div>
@@ -831,7 +969,7 @@ value of a after function call is 55
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="字符串">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="字符串">
                         
                         <span class="card-title">字符串</span>
                     </div>
@@ -1056,13 +1194,16 @@ value of a after function call is 55
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1091,9 +1232,9 @@ value of a after function call is 55
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1315,7 +1456,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

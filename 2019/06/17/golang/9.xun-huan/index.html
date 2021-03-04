@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,23 +308,10 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
 
 
 
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,16 +462,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-06-17
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.4k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -498,110 +508,110 @@
             <div id="articleContent">
                 <h1 id="9-循环"><a href="#9-循环" class="headerlink" title="9. 循环"></a>9. 循环</h1><p>循环语句是用来重复执行某一段代码。</p>
 <p><code>for</code> 是 Go 语言唯一的循环语句。Go 语言中并没有其他语言比如 C 语言中的 <code>while</code> 和 <code>do while</code> 循环。</p>
-<h2 id="for-循环语法"><a href="#for-循环语法" class="headerlink" title="for 循环语法"></a>for 循环语法</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">for</span> initialisation<span class="token punctuation">;</span> condition<span class="token punctuation">;</span> post <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<h2 id="for-循环语法"><a href="#for-循环语法" class="headerlink" title="for 循环语法"></a>for 循环语法</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">for</span> initialisation<span class="token punctuation">;</span> condition<span class="token punctuation">;</span> post <span class="token punctuation">&#123;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>初始化语句只执行一次。循环初始化后，将检查循环条件。如果条件的计算结果为 <code>true</code> ，则 <code>&#123;&#125;</code> 内的循环体将执行，接着执行 post 语句。post 语句将在每次成功循环迭代后执行。在执行 post 语句后，条件将被再次检查。如果为 <code>true</code>, 则循环将继续执行，否则 for 循环将终止。（译注：这是典型的 for 循环三个表达式，第一个为初始化表达式或赋值语句；第二个为循环条件判定表达式；第三个为循环变量修正表达式，即此处的 post ）</p>
 <p>这三个组成部分，即初始化，条件和 post 都是可选的。让我们看一个例子来更好地理解循环。</p>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>让我们用 <code>for</code> 循环写一个打印出从 1 到 10 的程序。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">" %d"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序中，i 变量被初始化为 1。条件语句会检查 i 是否小于 10。如果条件成立，i 就会被打印出来，否则循环就会终止。循环语句会在每一次循环完成后自增 1。一旦 i 变得比 10 要大，循环中止。</p>
 <p>上面的程序会打印出 <code>1 2 3 4 5 6 7 8 9 10</code> 。</p>
 <p>在 <code>for</code> 循环中声明的变量只能在循环体内访问，因此 i 不能够在循环体外访问。</p>
 <h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><p><code>break</code> 语句用于在完成正常执行之前突然终止 for 循环，之后程序将会在 for 循环下一行代码开始执行。</p>
 <p>让我们写一个从 1 打印到 5 并且使用 <code>break</code> 跳出循环的程序。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> i <span class="token operator">></span> <span class="token number">5</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">break</span> <span class="token comment" spellcheck="true">//loop is terminated if i > 5</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> i <span class="token operator">></span> <span class="token number">5</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">break</span> <span class="token comment">//loop is terminated if i > 5</span>
+        <span class="token punctuation">&#125;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"\nline after for loop"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序中，在循环过程中 i 的值会被判断。如果 i 的值大于 5 然后 <code>break</code> 语句就会执行，循环就会被终止。打印语句会在 <code>for</code> 循环结束后执行，上面程序会输出为</p>
-<pre><code>1 2 3 4 5  
-line after for loop
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">1 2 3 4 5  
+line after for loop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h2 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h2><p><code>continue</code> 语句用来跳出 <code>for</code> 循环中当前循环。在 <code>continue</code> 语句后的所有的 <code>for</code> 循环语句都不会在本次循环中执行。循环体会在一下次循环中继续执行。</p>
 <p>让我们写一个打印出 1 到 10 并且使用 <code>continue</code> 的程序。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> i<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> i<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">continue</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序中，这行代码 <code>if i%2==0</code> 会判断 i 除以 2 的余数是不是 0，如果是 0，这个数字就是偶数然后执行 <code>continue</code> 语句，从而控制程序进入下一个循环。因此在 <code>continue</code> 后面的打印语句不会被调用而程序会进入一下个循环。上面程序会输出 <code>1 3 5 7 9</code>。</p>
 <h2 id="更多例子"><a href="#更多例子" class="headerlink" title="更多例子"></a>更多例子</h2><p>让我们写更多的代码来演示 <code>for</code> 循环的多样性吧</p>
 <p>下面这个程序打印出从 0 到 10 所有的偶数。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     i <span class="token operator">:=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> <span class="token punctuation">;</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// initialisation and post are omitted</span>
+    <span class="token keyword">for</span> <span class="token punctuation">;</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token punctuation">&#123;</span> <span class="token comment">// initialisation and post are omitted</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span>
         i <span class="token operator">+=</span> <span class="token number">2</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>正如我们已经知道的那样，<code>for</code> 循环的三部分，初始化语句、条件语句、post 语句都是可选的。在上面的程序中，初始化语句和 post 语句都被省略了。i 在 <code>for</code> 循环外被初始化成了 0。只要 <code>i&lt;=10</code> 循环就会被执行。在循环中，i 以 2 的增量自增。上面的程序会输出 <code>0 2 4 6 8 10</code>。</p>
 <p>上面程序中 <code>for</code> 循环中的分号也可以省略。这个格式的 <code>for</code> 循环可以看作是二选一的 <code>for while</code> 循环。上面的程序可以被重写成：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     i <span class="token operator">:=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//semicolons are ommitted and only condition is present</span>
+    <span class="token keyword">for</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span> <span class="token punctuation">&#123;</span> <span class="token comment">//semicolons are ommitted and only condition is present</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span>
         i <span class="token operator">+=</span> <span class="token number">2</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在 <code>for</code> 循环中可以声明和操作多个变量。让我们写一个使用声明多个变量来打印下面序列的程序。</p>
-<pre><code>10 * 1 = 10  
-11 * 2 = 22  
-12 * 3 = 36  
-13 * 4 = 52  
-14 * 5 = 70  
-15 * 6 = 90  
-16 * 7 = 112  
-17 * 8 = 136  
-18 * 9 = 162  
-19 * 10 = 190
+<pre class="line-numbers language-none"><code class="language-none">10 * 1 &#x3D; 10  
+11 * 2 &#x3D; 22  
+12 * 3 &#x3D; 36  
+13 * 4 &#x3D; 52  
+14 * 5 &#x3D; 70  
+15 * 6 &#x3D; 90  
+16 * 7 &#x3D; 112  
+17 * 8 &#x3D; 136  
+18 * 9 &#x3D; 162  
+19 * 10 &#x3D; 190
 package main
 
 import (  
@@ -609,28 +619,28 @@ import (
 )
 
 func main() &#123;  
-    for no, i := 10, 1; i &lt;= 10 &amp;&amp; no &lt;= 19; i, no = i+1, no+1 &#123; //multiple initialisation and increment
-        fmt.Printf(&quot;%d * %d = %d\n&quot;, no, i, no*i)
+    for no, i :&#x3D; 10, 1; i &lt;&#x3D; 10 &amp;&amp; no &lt;&#x3D; 19; i, no &#x3D; i+1, no+1 &#123; &#x2F;&#x2F;multiple initialisation and increment
+        fmt.Printf(&quot;%d * %d &#x3D; %d\n&quot;, no, i, no*i)
     &#125;
 
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序中 <code>no</code> 和 <code>i</code> 被声明然后分别被初始化为 10 和 1 。在每一次循环结束后 <code>no</code> 和 <code>i</code> 都自增 1 。布尔型操作符 <code>&amp;&amp;</code> 被用来确保 i 小于等于 10 并且 <code>no</code> 小于等于 19 。</p>
 <h2 id="无限循环"><a href="#无限循环" class="headerlink" title="无限循环"></a>无限循环</h2><p>无限循环的语法是：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">for</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">for</span> <span class="token punctuation">&#123;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>下一个程序就会一直打印<code>Hello World</code>不会停止。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    <span class="token keyword">for</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">for</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在你本地系统上运行，来无限的打印 “Hello World” 。</p>
 <p>这里还有一个 <code>range</code> 结构，它可以被用来在 <code>for</code> 循环中操作数组对象。当我们学习数组时我们会补充这方面内容。</p>
 
@@ -720,8 +730,136 @@ func main() &#123;
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -750,7 +888,7 @@ func main() &#123;
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="switch语句">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="switch语句">
                         
                         <span class="card-title">switch语句</span>
                     </div>
@@ -799,7 +937,7 @@ func main() &#123;
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="if-else语句">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="if-else语句">
                         
                         <span class="card-title">if-else语句</span>
                     </div>
@@ -1024,13 +1162,16 @@ func main() &#123;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1059,9 +1200,9 @@ func main() &#123;
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1283,7 +1424,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

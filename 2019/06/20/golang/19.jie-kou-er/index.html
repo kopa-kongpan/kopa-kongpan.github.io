@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,23 +308,10 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
 
 
 
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,16 +462,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-04
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.6k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    6 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -497,57 +507,57 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="19-接口（二）"><a href="#19-接口（二）" class="headerlink" title="19. 接口（二）"></a>19. 接口（二）</h1><h3 id="实现接口：指针接受者与值接受者"><a href="#实现接口：指针接受者与值接受者" class="headerlink" title="实现接口：指针接受者与值接受者"></a>实现接口：指针接受者与值接受者</h3><p>在接口（一）上的所有示例中，我们都是使用值接受者（Value Receiver）来实现接口的。我们同样可以使用指针接受者（Pointer Receiver）来实现接口。只不过在用指针接受者实现接口时，还有一些细节需要注意。我们通过下面的代码来理解吧。 </p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">type</span> Describer <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Describer <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     name <span class="token builtin">string</span>
     age  <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span> <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 使用值接受者实现  </span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p Person<span class="token punctuation">)</span> <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 使用值接受者实现  </span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s is %d years old\n"</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>name<span class="token punctuation">,</span> p<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> Address <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">type</span> Address <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>
     state   <span class="token builtin">string</span>
     country <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a <span class="token operator">*</span>Address<span class="token punctuation">)</span> <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 使用指针接受者实现</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a <span class="token operator">*</span>Address<span class="token punctuation">)</span> <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 使用指针接受者实现</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"State %s Country %s"</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>state<span class="token punctuation">,</span> a<span class="token punctuation">.</span>country<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> d1 Describer
-    p1 <span class="token operator">:=</span> Person<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"Sam"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    p1 <span class="token operator">:=</span> Person<span class="token punctuation">&#123;</span><span class="token string">"Sam"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">&#125;</span>
     d1 <span class="token operator">=</span> p1
     d1<span class="token punctuation">.</span><span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    p2 <span class="token operator">:=</span> Person<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"James"</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    p2 <span class="token operator">:=</span> Person<span class="token punctuation">&#123;</span><span class="token string">"James"</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">&#125;</span>
     d1 <span class="token operator">=</span> <span class="token operator">&amp;</span>p2
     d1<span class="token punctuation">.</span><span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
     <span class="token keyword">var</span> d2 Describer
-    a <span class="token operator">:=</span> Address<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"Washington"</span><span class="token punctuation">,</span> <span class="token string">"USA"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    a <span class="token operator">:=</span> Address<span class="token punctuation">&#123;</span><span class="token string">"Washington"</span><span class="token punctuation">,</span> <span class="token string">"USA"</span><span class="token punctuation">&#125;</span>
 
-    <span class="token comment" spellcheck="true">/* 如果下面一行取消注释会导致编译错误：
+    <span class="token comment">/* 如果下面一行取消注释会导致编译错误：
        cannot use a (type Address) as type Describer
        in assignment: Address does not implement
        Describer (Describe method has pointer
        receiver)
     */</span>
-    <span class="token comment" spellcheck="true">//d2 = a</span>
+    <span class="token comment">//d2 = a</span>
 
-    d2 <span class="token operator">=</span> <span class="token operator">&amp;</span>a <span class="token comment" spellcheck="true">// 这是合法的</span>
-    <span class="token comment" spellcheck="true">// 因为在第 22 行，Address 类型的指针实现了 Describer 接口</span>
+    d2 <span class="token operator">=</span> <span class="token operator">&amp;</span>a <span class="token comment">// 这是合法的</span>
+    <span class="token comment">// 因为在第 22 行，Address 类型的指针实现了 Describer 接口</span>
     d2<span class="token punctuation">.</span><span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序中的第 13 行，结构体 <code>Person</code> 使用值接受者，实现了 <code>Describer</code> 接口。  </p>
 <p>我们在讨论方法的时候就已经提到过，使用值接受者声明的方法，既可以用值来调用，也能用指针调用。<strong>不管是一个值，还是一个可以解引用的指针，调用这样的方法都是合法的</strong>。</p>
 <p><code>p1</code> 的类型是 <code>Person</code>，在第 29 行，<code>p1</code> 赋值给了 <code>d1</code>。由于 <code>Person</code> 实现了接口变量 <code>d1</code>，因此在第 30 行，会打印 <code>Sam is 25 years old</code>。</p>
@@ -557,155 +567,155 @@
 <p><strong>其原因是：对于使用指针接受者的方法，用一个指针或者一个可取得地址的值来调用都是合法的。但接口中存储的具体值（Concrete Value）并不能取到地址，因此在第 45 行，对于编译器无法自动获取 a 的地址，于是程序报错</strong>。  </p>
 <p>第 47 行就可以成功运行，因为我们将 <code>a</code> 的地址 <code>&amp;a</code> 赋值给了 <code>d2</code>。  </p>
 <p>程序的其他部分不言而喻。该程序会打印：  </p>
-<pre><code>Sam is 25 years old  
+<pre class="line-numbers language-none"><code class="language-none">Sam is 25 years old  
 James is 32 years old  
-State Washington Country USA
-</code></pre>
+State Washington Country USA<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="实现多个接口"><a href="#实现多个接口" class="headerlink" title="实现多个接口"></a>实现多个接口</h3><p>类型可以实现多个接口。我们看看下面程序是如何做到的。  </p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> SalaryCalculator <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> SalaryCalculator <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> LeaveCalculator <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> LeaveCalculator <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> Employee <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Employee <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName <span class="token builtin">string</span>
     lastName <span class="token builtin">string</span>
     basicPay <span class="token builtin">int</span>
     pf <span class="token builtin">int</span>
     totalLeaves <span class="token builtin">int</span>
     leavesTaken <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s %s has salary $%d"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span> e<span class="token punctuation">.</span>lastName<span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>basicPay <span class="token operator">+</span> e<span class="token punctuation">.</span>pf<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> e<span class="token punctuation">.</span>totalLeaves <span class="token operator">-</span> e<span class="token punctuation">.</span>leavesTaken
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    e <span class="token operator">:=</span> Employee <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    e <span class="token operator">:=</span> Employee <span class="token punctuation">&#123;</span>
         firstName<span class="token punctuation">:</span> <span class="token string">"Naveen"</span><span class="token punctuation">,</span>
         lastName<span class="token punctuation">:</span> <span class="token string">"Ramanathan"</span><span class="token punctuation">,</span>
         basicPay<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">,</span>
         pf<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
         totalLeaves<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
         leavesTaken<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     <span class="token keyword">var</span> s SalaryCalculator <span class="token operator">=</span> e
     s<span class="token punctuation">.</span><span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">var</span> l LeaveCalculator <span class="token operator">=</span> e
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"\nLeaves left ="</span><span class="token punctuation">,</span> l<span class="token punctuation">.</span><span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上述程序在第 7 行和第 11 行分别声明了两个接口：<code>SalaryCalculator</code> 和 <code>LeaveCalculator</code>。  </p>
 <p>第 15 行定义了结构体 <code>Employee</code>，它在第 24 行实现了 <code>SalaryCalculator</code> 接口的 <code>DisplaySalary</code> 方法，接着在第 28 行又实现了 <code>LeaveCalculator</code> 接口里的 <code>CalculateLeavesLeft</code> 方法。于是 <code>Employee</code> 就实现了 <code>SalaryCalculator</code> 和 <code>LeaveCalculator</code> 两个接口。  </p>
 <p>第 41 行，我们把 <code>e</code> 赋值给了 <code>SalaryCalculator</code> 类型的接口变量 ，而在 43 行，我们同样把 <code>e</code> 赋值给 <code>LeaveCalculator</code> 类型的接口变量 。由于 <code>e</code> 的类型 <code>Employee</code> 实现了 <code>SalaryCalculator</code> 和 <code>LeaveCalculator</code> 两个接口，因此这是合法的。  </p>
 <p>该程序会输出：</p>
-<pre><code>Naveen Ramanathan has salary $5200  
-Leaves left = 25
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Naveen Ramanathan has salary $5200  
+Leaves left &#x3D; 25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="接口的嵌套"><a href="#接口的嵌套" class="headerlink" title="接口的嵌套"></a>接口的嵌套</h3><p>尽管 Go 语言没有提供继承机制，但可以通过嵌套其他的接口，创建一个新接口。  </p>
 <p>我们来看看这如何实现。  </p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> SalaryCalculator <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> SalaryCalculator <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> LeaveCalculator <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> LeaveCalculator <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> EmployeeOperations <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> EmployeeOperations <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     SalaryCalculator
     LeaveCalculator
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> Employee <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Employee <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName <span class="token builtin">string</span>
     lastName <span class="token builtin">string</span>
     basicPay <span class="token builtin">int</span>
     pf <span class="token builtin">int</span>
     totalLeaves <span class="token builtin">int</span>
     leavesTaken <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s %s has salary $%d"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span> e<span class="token punctuation">.</span>lastName<span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>basicPay <span class="token operator">+</span> e<span class="token punctuation">.</span>pf<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> e<span class="token punctuation">.</span>totalLeaves <span class="token operator">-</span> e<span class="token punctuation">.</span>leavesTaken
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    e <span class="token operator">:=</span> Employee <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    e <span class="token operator">:=</span> Employee <span class="token punctuation">&#123;</span>
         firstName<span class="token punctuation">:</span> <span class="token string">"Naveen"</span><span class="token punctuation">,</span>
         lastName<span class="token punctuation">:</span> <span class="token string">"Ramanathan"</span><span class="token punctuation">,</span>
         basicPay<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">,</span>
         pf<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
         totalLeaves<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
         leavesTaken<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     <span class="token keyword">var</span> empOp EmployeeOperations <span class="token operator">=</span> e
     empOp<span class="token punctuation">.</span><span class="token function">DisplaySalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"\nLeaves left ="</span><span class="token punctuation">,</span> empOp<span class="token punctuation">.</span><span class="token function">CalculateLeavesLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序的第 15 行，我们创建了一个新的接口 <code>EmployeeOperations</code>，它嵌套了两个接口：<code>SalaryCalculator</code> 和 <code>LeaveCalculator</code>。</p>
 <p>如果一个类型定义了 <code>SalaryCalculator</code> 和 <code>LeaveCalculator</code> 接口里包含的方法，我们就称该类型实现了 <code>EmployeeOperations</code> 接口。</p>
 <p>在第 29 行和第 33 行，由于 <code>Employee</code> 结构体定义了 <code>DisplaySalary</code> 和 <code>CalculateLeavesLeft</code> 方法，因此它实现了接口 <code>EmployeeOperations</code>。</p>
 <p>在 46 行，<code>empOp</code> 的类型是 <code>EmployeeOperations</code>，<code>e</code> 的类型是 <code>Employee</code>，我们把 <code>empOp</code> 赋值为 <code>e</code>。接下来的两行，<code>empOp</code> 调用了 <code>DisplaySalary()</code> 和 <code>CalculateLeavesLeft()</code> 方法。</p>
 <p>该程序输出：</p>
-<pre><code>Naveen Ramanathan has salary $5200
-Leaves left = 25
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Naveen Ramanathan has salary $5200
+Leaves left &#x3D; 25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="接口的零值"><a href="#接口的零值" class="headerlink" title="接口的零值"></a>接口的零值</h3><p>接口的零值是 <code>nil</code>。对于值为 <code>nil</code> 的接口，其底层值（Underlying Value）和具体类型（Concrete Type）都为 <code>nil</code>。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">type</span> Describer <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Describer <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> d1 Describer
-    <span class="token keyword">if</span> d1 <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> d1 <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"d1 is nil and has type %T value %v\n"</span><span class="token punctuation">,</span> d1<span class="token punctuation">,</span> d1<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面程序里的 <code>d1</code> 等于 <code>nil</code>，程序会输出：</p>
-<pre><code>d1 is nil and has type &lt;nil&gt; value &lt;nil&gt;
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">d1 is nil and has type &lt;nil&gt; value &lt;nil&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>对于值为 <code>nil</code> 的接口，由于没有底层值和具体类型，当我们试图调用它的方法时，程序会产生 <code>panic</code> 异常。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
-<span class="token keyword">type</span> Describer <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">type</span> Describer <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>
     <span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> d1 Describer
     d1<span class="token punctuation">.</span><span class="token function">Describe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序中，<code>d1</code> 等于 <code>nil</code>，程序产生运行时错误 <code>panic</code>： <strong>panic: runtime error: invalid memory address or nil pointer dereference  [signal SIGSEGV: segmentation violation code=0xffffffff addr=0x0 pc=0xc8527]</strong> 。  </p>
 
                 
@@ -794,8 +804,136 @@ Leaves left = 25
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -824,7 +962,7 @@ Leaves left = 25
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="django中pymysql问题">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="django中pymysql问题">
                         
                         <span class="card-title">django中pymysql问题</span>
                     </div>
@@ -865,7 +1003,7 @@ Leaves left = 25
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="接口一">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="接口一">
                         
                         <span class="card-title">接口一</span>
                     </div>
@@ -1090,13 +1228,16 @@ Leaves left = 25
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1125,9 +1266,9 @@ Leaves left = 25
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1349,7 +1490,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

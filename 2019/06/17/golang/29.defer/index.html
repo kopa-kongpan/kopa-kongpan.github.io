@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,19 +308,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -462,16 +449,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-02-10
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -484,207 +494,207 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="29-Defer"><a href="#29-Defer" class="headerlink" title="29. Defer"></a>29. Defer</h1><h2 id="什么是-defer？"><a href="#什么是-defer？" class="headerlink" title="什么是 defer？"></a>什么是 defer？</h2><p><code>defer</code> 语句的用途是：含有 <code>defer</code> 语句的函数，会在该函数将要返回之前，调用另一个函数。这个定义可能看起来很复杂，我们通过一个示例就很容易明白了。</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">finished</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">finished</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Finished finding largest"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">largest</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">largest</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">defer</span> <span class="token function">finished</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Started finding largest"</span><span class="token punctuation">)</span>
     max <span class="token operator">:=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> nums <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> v <span class="token operator">></span> max <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> nums <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> v <span class="token operator">></span> max <span class="token punctuation">&#123;</span>
             max <span class="token operator">=</span> v
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Largest number in"</span><span class="token punctuation">,</span> nums<span class="token punctuation">,</span> <span class="token string">"is"</span><span class="token punctuation">,</span> max<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    nums <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">109</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">563</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    nums <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">&#123;</span><span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">109</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">563</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">&#125;</span>
     <span class="token function">largest</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面的程序很简单，就是找出一个给定切片的最大值。<code>largest</code> 函数接收一个 int 类型的<a target="_blank" rel="noopener" href="https://studygolang.com/articles/12121">切片</a>作为参数，然后打印出该切片中的最大值。<code>largest</code> 函数的第一行的语句为 <code>defer finished()</code>。这表示在 <code>finished()</code> 函数将要返回之前，会调用 <code>finished()</code> 函数。运行该程序，你会看到有如下输出：</p>
-<pre><code>Started finding largest  
+<pre class="line-numbers language-none"><code class="language-none">Started finding largest  
 Largest number in [78 109 2 563 300] is 563  
-Finished finding largest
-</code></pre>
+Finished finding largest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p><code>largest</code> 函数开始执行后，会打印上面的两行输出。而就在 <code>largest</code> 将要返回的时候，又调用了我们的延迟函数（Deferred Function），打印出 <code>Finished finding largest</code> 的文本。</p>
 <h2 id="延迟方法"><a href="#延迟方法" class="headerlink" title="延迟方法"></a>延迟方法</h2><p><code>defer</code> 不仅限于[函数]的调用，调用[方法]也是合法的。我们写一个小程序来测试吧。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
 
-<span class="token keyword">type</span> person <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> person <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName <span class="token builtin">string</span>
     lastName <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>p person<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p person<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s %s"</span><span class="token punctuation">,</span>p<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span>p<span class="token punctuation">.</span>lastName<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    p <span class="token operator">:=</span> person <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    p <span class="token operator">:=</span> person <span class="token punctuation">&#123;</span>
         firstName<span class="token punctuation">:</span> <span class="token string">"John"</span><span class="token punctuation">,</span>
         lastName<span class="token punctuation">:</span> <span class="token string">"Smith"</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     <span class="token keyword">defer</span> p<span class="token punctuation">.</span><span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Welcome "</span><span class="token punctuation">)</span>  
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的例子中，我们在第 22 行延迟了一个方法调用。而其他的代码很直观，这里不再解释。该程序输出：</p>
-<pre><code>Welcome John Smith
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Welcome John Smith<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h2 id="实参取值（Arguments-Evaluation）"><a href="#实参取值（Arguments-Evaluation）" class="headerlink" title="实参取值（Arguments Evaluation）"></a>实参取值（Arguments Evaluation）</h2><p>在 Go 语言中，并非在调用延迟函数的时候才确定实参，而是当执行 <code>defer</code> 语句的时候，就会对延迟函数的实参进行求值。</p>
 <p>通过一个例子就能够理解了。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">printA</span><span class="token punctuation">(</span>a <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">printA</span><span class="token punctuation">(</span>a <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"value of a in deferred function"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     a <span class="token operator">:=</span> <span class="token number">5</span>
     <span class="token keyword">defer</span> <span class="token function">printA</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
     a <span class="token operator">=</span> <span class="token number">10</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"value of a before deferred function call"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序里的第 11 行，<code>a</code> 的初始值为 5。在第 12 行执行 <code>defer</code> 语句的时候，由于 <code>a</code> 等于 5，因此延迟函数 <code>printA</code> 的实参也等于 5。接着我们在第 13 行将 <code>a</code> 的值修改为 10。下一行会打印出 <code>a</code> 的值。该程序输出：</p>
-<pre><code>value of a before deferred function call 10  
-value of a in deferred function 5
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">value of a before deferred function call 10  
+value of a in deferred function 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>从上面的输出，我们可以看出，在调用了 <code>defer</code> 语句后，虽然我们将 <code>a</code> 修改为 10，但调用延迟函数 <code>printA(a)</code>后，仍然打印的是 5。</p>
 <h2 id="defer-栈"><a href="#defer-栈" class="headerlink" title="defer 栈"></a>defer 栈</h2><p>当一个函数内多次调用 <code>defer</code> 时，Go 会把 <code>defer</code> 调用放入到一个栈中，随后按照后进先出（Last In First Out, LIFO）的顺序执行。</p>
 <p>我们下面编写一个小程序，使用 <code>defer</code> 栈，将一个字符串逆序打印。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     name <span class="token operator">:=</span> <span class="token string">"Naveen"</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Orignal String: %s\n"</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Reversed String: "</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">rune</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">rune</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">defer</span> fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序中的第 11 行，<code>for range</code> 循环会遍历一个字符串，并在第 12 行调用了 <code>defer fmt.Printf(&quot;%c&quot;, v)</code>。这些延迟调用会添加到一个栈中，按照后进先出的顺序执行，因此，该字符串会逆序打印出来。该程序会输出：</p>
-<pre><code>Orignal String: Naveen  
-Reversed String: neevaN
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Orignal String: Naveen  
+Reversed String: neevaN<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h2 id="defer-的实际应用"><a href="#defer-的实际应用" class="headerlink" title="defer 的实际应用"></a>defer 的实际应用</h2><p>目前为止，我们看到的代码示例，都没有体现出 <code>defer</code> 的实际用途。本节我们会看看 <code>defer</code> 的实际应用。</p>
 <p>当一个函数应该在与当前代码流（Code Flow）无关的环境下调用时，可以使用 <code>defer</code>。我们通过一个用到了 [<code>WaitGroup</code>] 代码示例来理解这句话的含义。我们首先会写一个没有使用 <code>defer</code> 的程序，然后我们会用 <code>defer</code> 来修改，看到 <code>defer</code> 带来的好处。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
     <span class="token string">"sync"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> rect <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> rect <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     length <span class="token builtin">int</span>
     width  <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r rect<span class="token punctuation">)</span> <span class="token function">area</span><span class="token punctuation">(</span>wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    <span class="token keyword">if</span> r<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>r rect<span class="token punctuation">)</span> <span class="token function">area</span><span class="token punctuation">(</span>wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">if</span> r<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"rect %v's length should be greater than zero\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
         wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> r<span class="token punctuation">.</span>width <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> r<span class="token punctuation">.</span>width <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"rect %v's width should be greater than zero\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
         wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     area <span class="token operator">:=</span> r<span class="token punctuation">.</span>length <span class="token operator">*</span> r<span class="token punctuation">.</span>width
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"rect %v's area %d\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> area<span class="token punctuation">)</span>
     wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
-    r1 <span class="token operator">:=</span> rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">-</span><span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    r2 <span class="token operator">:=</span> rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">67</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    r3 <span class="token operator">:=</span> rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    rects <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>r1<span class="token punctuation">,</span> r2<span class="token punctuation">,</span> r3<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> rects <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    r1 <span class="token operator">:=</span> rect<span class="token punctuation">&#123;</span><span class="token operator">-</span><span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">&#125;</span>
+    r2 <span class="token operator">:=</span> rect<span class="token punctuation">&#123;</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">67</span><span class="token punctuation">&#125;</span>
+    r3 <span class="token operator">:=</span> rect<span class="token punctuation">&#123;</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">&#125;</span>
+    rects <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>rect<span class="token punctuation">&#123;</span>r1<span class="token punctuation">,</span> r2<span class="token punctuation">,</span> r3<span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> rects <span class="token punctuation">&#123;</span>
         wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token keyword">go</span> v<span class="token punctuation">.</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>wg<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"All go routines finished executing"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序里，我们在第 8 行创建了 <code>rect</code> 结构体，并在第 13 行创建了 <code>rect</code> 的方法 <code>area</code>，计算出矩形的面积。<code>area</code> 检查了矩形的长宽是否小于零。如果矩形的长宽小于零，它会打印出对应的提示信息，而如果大于零，它会打印出矩形的面积。</p>
 <p><code>main</code> 函数创建了 3 个 <code>rect</code> 类型的变量：<code>r1</code>、<code>r2</code> 和 <code>r3</code>。在第 34 行，我们把这 3 个变量添加到了 <code>rects</code> 切片里。该切片接着使用 <code>for range</code> 循环遍历，把 <code>area</code> 方法作为一个并发的 Go 协程进行调用（第 37 行）。我们用 <code>WaitGroup wg</code> 来确保 <code>main</code> 函数在其他协程执行完毕之后，才会结束执行。<code>WaitGroup</code> 作为参数传递给 <code>area</code> 方法后，在第 16 行、第 21 行和第 26 行通知 <code>main</code> 函数，表示现在协程已经完成所有任务。<strong>如果你仔细观察，会发现 wg.Done() 只在 area 函数返回的时候才会调用。wg.Done() 应该在 area 将要返回之前调用，并且与代码流的路径（Path）无关，因此我们可以只调用一次 defer，来有效地替换掉 wg.Done() 的多次调用</strong>。</p>
 <p>我们来用 <code>defer</code> 来重写上面的代码。</p>
 <p>在下面的代码中，我们移除了原先程序中的 3 个 <code>wg.Done</code> 的调用，而是用一个单独的 <code>defer wg.Done()</code> 来取代它（第 14 行）。这使得我们的代码更加简洁易懂。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
     <span class="token string">"sync"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> rect <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> rect <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     length <span class="token builtin">int</span>
     width  <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r rect<span class="token punctuation">)</span> <span class="token function">area</span><span class="token punctuation">(</span>wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>r rect<span class="token punctuation">)</span> <span class="token function">area</span><span class="token punctuation">(</span>wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> r<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> r<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"rect %v's length should be greater than zero\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> r<span class="token punctuation">.</span>width <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> r<span class="token punctuation">.</span>width <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"rect %v's width should be greater than zero\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     area <span class="token operator">:=</span> r<span class="token punctuation">.</span>length <span class="token operator">*</span> r<span class="token punctuation">.</span>width
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"rect %v's area %d\n"</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> area<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
-    r1 <span class="token operator">:=</span> rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">-</span><span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    r2 <span class="token operator">:=</span> rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">67</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    r3 <span class="token operator">:=</span> rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    rects <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>rect<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>r1<span class="token punctuation">,</span> r2<span class="token punctuation">,</span> r3<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> rects <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    r1 <span class="token operator">:=</span> rect<span class="token punctuation">&#123;</span><span class="token operator">-</span><span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">&#125;</span>
+    r2 <span class="token operator">:=</span> rect<span class="token punctuation">&#123;</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">67</span><span class="token punctuation">&#125;</span>
+    r3 <span class="token operator">:=</span> rect<span class="token punctuation">&#123;</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">&#125;</span>
+    rects <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>rect<span class="token punctuation">&#123;</span>r1<span class="token punctuation">,</span> r2<span class="token punctuation">,</span> r3<span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> rects <span class="token punctuation">&#123;</span>
         wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token keyword">go</span> v<span class="token punctuation">.</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>wg<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"All go routines finished executing"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>该程序会输出：</p>
-<pre><code>rect &#123;8 9&#125;&#39;s area 72  
+<pre class="line-numbers language-none"><code class="language-none">rect &#123;8 9&#125;&#39;s area 72  
 rect &#123;-67 89&#125;&#39;s length should be greater than zero  
 rect &#123;5 -67&#125;&#39;s width should be greater than zero  
-All go routines finished executing
-</code></pre>
+All go routines finished executing<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序中，使用 <code>defer</code> 还有一个好处。假设我们使用 <code>if</code> 条件语句，又给 <code>area</code> 方法添加了一条返回路径（Return Path）。如果没有使用 <code>defer</code> 来调用 <code>wg.Done()</code>，我们就得很小心了，确保在这条新添的返回路径里调用了 <code>wg.Done()</code>。由于现在我们延迟调用了 <code>wg.Done()</code>，因此无需再为这条新的返回路径添加 <code>wg.Done()</code> 了。</p>
 
                 
@@ -769,8 +779,136 @@ All go routines finished executing
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -1049,13 +1187,16 @@ All go routines finished executing
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1084,9 +1225,9 @@ All go routines finished executing
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1308,7 +1449,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,19 +308,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -462,16 +449,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-02-09
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -497,47 +507,47 @@
 </ul>
 <h2 id="将整个文件读取到内存"><a href="#将整个文件读取到内存" class="headerlink" title="将整个文件读取到内存"></a>将整个文件读取到内存</h2><p>将整个文件读取到内存是最基本的文件操作之一。这需要使用 <code>ioutil</code>]包中的 <a target="_blank" rel="noopener" href="https://golang.org/pkg/io/ioutil/#ReadFile"><code>ReadFile</code></a> 函数。</p>
 <p>让我们在 Go 程序所在的目录中，读取一个文件。我已经在 GOPATH（译注：原文是 GOROOT，应该是笔误）中创建了文件夹，在该文件夹内部，有一个文本文件 <code>test.txt</code>，我们会使用 Go 程序 <code>filehandling.go</code> 来读取它。<code>test.txt</code> 包含文本 “Hello World. Welcome to file handling in Go”。我的文件夹结构如下：</p>
-<pre><code>src
+<pre class="line-numbers language-none"><code class="language-none">src
     filehandling
         filehandling.go
-        test.txt
-</code></pre>
+        test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>接下来我们来看看代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"fmt"</span>
     <span class="token string">"io/ioutil"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     data<span class="token punctuation">,</span> err <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span><span class="token string">"test.txt"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"File reading error"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Contents of file:"</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>由于无法在 playground 上读取文件，因此请在你的本地环境运行这个程序。</p>
 <p>在上述程序的第 9 行，程序会读取文件，并返回一个字节<a target="_blank" rel="noopener" href="https://studygolang.com/articles/12121">切片</a>，而这个切片保存在 <code>data</code> 中。在第 14 行，我们将 <code>data</code> 转换为 <code>string</code>，显示出文件的内容。</p>
 <p>请在 <strong>test.txt</strong> 所在的位置运行该程序。</p>
 <p>例如，对于 <strong>linux/mac</strong>，如果 <strong>test.txt</strong> 位于 <strong>/home/naveen/go/src/filehandling</strong>，可以使用下列步骤来运行程序。</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">cd</span> /home/naveen/go/src/filehandling/
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> /home/naveen/go/src/filehandling/
 $ go <span class="token function">install</span> filehandling
-$ workspacepath/bin/filehandling
-</code></pre>
+$ workspacepath/bin/filehandling<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>对于 <strong>windows</strong>，如果 <strong>test.txt</strong> 位于 <strong>C:\Users\naveen.r\go\src\filehandling</strong>，则使用下列步骤。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">></span> <span class="token function">cd</span> C:\Users\naveen.r\go\src\filehandling
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> <span class="token builtin class-name">cd</span> C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>naveen.r<span class="token punctuation">\</span>go<span class="token punctuation">\</span>src<span class="token punctuation">\</span>filehandling
 <span class="token operator">></span> go <span class="token function">install</span> filehandling
-<span class="token operator">></span> workspacepath\bin\filehandling.exe
-</code></pre>
+<span class="token operator">></span> workspacepath<span class="token punctuation">\</span>bin<span class="token punctuation">\</span>filehandling.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>该程序会输出：</p>
-<pre class=" language-bas"><code class="language-bas">Contents of file: Hello World. Welcome to file handling in Go.
-</code></pre>
+<pre class="line-numbers language-bas" data-language="bas"><code class="language-bas">Contents of file: Hello World. Welcome to file handling in Go.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>如果在其他位置运行这个程序（比如 <code>/home/userdirectory</code>），会打印下面的错误。</p>
-<pre class=" language-bash"><code class="language-bash">File reading error <span class="token function">open</span> test.txt: The system cannot <span class="token function">find</span> the <span class="token function">file</span> specified.
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">File reading error <span class="token function">open</span> test.txt: The system cannot <span class="token function">find</span> the <span class="token function">file</span> specified.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>这是因为 Go 是编译型语言。<code>go install</code> 会根据源代码创建一个二进制文件。二进制文件独立于源代码，可以在任何位置上运行。由于在运行二进制文件的位置上没有找到 <code>test.txt</code>，因此程序会报错，提示无法找到指定的文件。</p>
 <p>有三种方法可以解决这个问题。</p>
 <ol>
@@ -547,90 +557,90 @@ $ workspacepath/bin/filehandling
 </ol>
 <p>让我们来依次介绍。</p>
 <h3 id="1-使用绝对文件路径"><a href="#1-使用绝对文件路径" class="headerlink" title="1. 使用绝对文件路径"></a>1. 使用绝对文件路径</h3><p>要解决问题，最简单的方法就是传入绝对文件路径。我已经修改了程序，把路径改成了绝对路径。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"fmt"</span>
     <span class="token string">"io/ioutil"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     data<span class="token punctuation">,</span> err <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span><span class="token string">"/home/naveen/go/src/filehandling/test.txt"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"File reading error"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Contents of file:"</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>现在可以在任何位置上运行程序，打印出 <code>test.txt</code> 的内容。</p>
 <p>例如，可以在我的家目录运行。</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">cd</span> <span class="token variable">$HOME</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> <span class="token environment constant">$HOME</span>
 $ go <span class="token function">install</span> filehandling
-$ workspacepath/bin/filehandling
-</code></pre>
+$ workspacepath/bin/filehandling<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>该程序打印出了 <code>test.txt</code> 的内容。</p>
 <p>看似这是一个简单的方法，但它的缺点是：文件必须放在程序指定的路径中，否则就会出错。</p>
 <h3 id="2-使用命令行标记来传递文件路径"><a href="#2-使用命令行标记来传递文件路径" class="headerlink" title="2. 使用命令行标记来传递文件路径"></a>2. 使用命令行标记来传递文件路径</h3><p>另一种解决方案是使用命令行标记来传递文件路径。使用 <a target="_blank" rel="noopener" href="https://golang.org/pkg/flag/">flag</a> 包，我们可以从输入的命令行获取到文件路径，接着读取文件内容。</p>
 <p>首先我们来看看 <code>flag</code> 包是如何工作的。<code>flag</code> 包有一个名为 <a target="_blank" rel="noopener" href="https://golang.org/pkg/flag/#String"><code>String</code></a> 的<a target="_blank" rel="noopener" href="https://studygolang.com/articles/11892">函数</a>。该函数接收三个参数。第一个参数是标记名，第二个是默认值，第三个是标记的简短描述。</p>
 <p>让我们来编写程序，从命令行读取文件名。将 <code>filehandling.go</code> 的内容替换如下：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"flag"</span>
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     fptr <span class="token operator">:=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"fpath"</span><span class="token punctuation">,</span> <span class="token string">"test.txt"</span><span class="token punctuation">,</span> <span class="token string">"file path to read from"</span><span class="token punctuation">)</span>
     flag<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"value of fpath is"</span><span class="token punctuation">,</span> <span class="token operator">*</span>fptr<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序中第 8 行，通过 <code>String</code> 函数，创建了一个字符串标记，名称是 <code>fpath</code>，默认值是 <code>test.txt</code>，描述为 <code>file path to read from</code>。这个函数返回存储 flag 值的字符串<a target="_blank" rel="noopener" href="https://studygolang.com/articles/11756">变量</a>的地址。</p>
 <p>在程序访问 flag 之前，必须先调用 <code>flag.Parse()</code>。</p>
 <p>在第 10 行，程序会打印出 flag 值。</p>
 <p>使用下面命令运行程序。</p>
-<pre class=" language-bash"><code class="language-bash">wrkspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wrkspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>我们传入 <code>/path-of-file/test.txt</code>，赋值给了 <code>fpath</code> 标记。</p>
 <p>该程序输出：</p>
-<pre class=" language-bash"><code class="language-bash">value of fpath is /path-of-file/test.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">value of fpath is /path-of-file/test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>这是因为 <code>fpath</code> 的默认值是 <code>test.txt</code>。</p>
 <p>现在我们知道如何从命令行读取文件路径了，让我们继续完成我们的文件读取程序。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"flag"</span>
     <span class="token string">"fmt"</span>
     <span class="token string">"io/ioutil"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     fptr <span class="token operator">:=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"fpath"</span><span class="token punctuation">,</span> <span class="token string">"test.txt"</span><span class="token punctuation">,</span> <span class="token string">"file path to read from"</span><span class="token punctuation">)</span>
     flag<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     data<span class="token punctuation">,</span> err <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span><span class="token operator">*</span>fptr<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"File reading error"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Contents of file:"</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序里，命令行传入文件路径，程序读取了该文件的内容。使用下面命令运行该程序。</p>
-<pre class=" language-bash"><code class="language-bash">wrkspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wrkspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>请将 <code>/path-of-file/</code> 替换为 <code>test.txt</code> 的真实路径。该程序将打印：</p>
-<pre class=" language-txt"><code class="language-txt">Contents of file: Hello World. Welcome to file handling in Go.
-</code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">Contents of file: Hello World. Welcome to file handling in Go.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h3 id="3-将文件绑定在二进制文件中"><a href="#3-将文件绑定在二进制文件中" class="headerlink" title="3. 将文件绑定在二进制文件中"></a>3. 将文件绑定在二进制文件中</h3><p>虽然从命令行获取文件路径的方法很好，但还有一种更好的解决方法。如果我们能够将文本文件捆绑在二进制文件，岂不是很棒？这就是我们下面要做的事情。</p>
 <p>有很多<a target="_blank" rel="noopener" href="https://studygolang.com/articles/11893">包</a>可以帮助我们实现。我们会使用 <a target="_blank" rel="noopener" href="https://github.com/gobuffalo/packr">packr</a>，因为它很简单，并且我在项目中使用它时，没有出现任何问题。</p>
 <p>第一步就是安装 <code>packr</code> 包。</p>
 <p>在命令提示符中输入下面命令，安装 <code>packr</code> 包。</p>
-<pre class=" language-bash"><code class="language-bash">go get -u github.com/gobuffalo/packr/<span class="token punctuation">..</span>.
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go get -u github.com/gobuffalo/packr/<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><code>packr</code> 会把静态文件（例如 <code>.txt</code> 文件）转换为 <code>.go</code> 文件，接下来，<code>.go</code> 文件会直接嵌入到二进制文件中。<code>packer</code> 非常智能，在开发过程中，可以从磁盘而非二进制文件中获取静态文件。在开发过程中，当仅仅静态文件变化时，可以不必重新编译。</p>
 <p>我们通过程序来更好地理解它。用以下内容来替换 <code>handling.go</code> 文件。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"fmt"</span>
@@ -638,42 +648,42 @@ $ workspacepath/bin/filehandling
     <span class="token string">"github.com/gobuffalo/packr"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     box <span class="token operator">:=</span> packr<span class="token punctuation">.</span><span class="token function">NewBox</span><span class="token punctuation">(</span><span class="token string">"../filehandling"</span><span class="token punctuation">)</span>
     data <span class="token operator">:=</span> box<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"test.txt"</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Contents of file:"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序的第 10 行，我们创建了一个新盒子（New Box）。盒子表示一个文件夹，其内容会嵌入到二进制中。在这里，我指定了 <code>filehandling</code> 文件夹，其内容包含 <code>test.txt</code>。在下一行，我们读取了文件内容，并打印出来。</p>
 <p>在开发阶段时，我们可以使用 <code>go install</code> 命令来运行程序。程序可以正常运行。<code>packr</code> 非常智能，在开发阶段可以从磁盘加载文件。</p>
 <p>使用下面命令来运行程序。</p>
-<pre class=" language-bash"><code class="language-bash">go <span class="token function">install</span> filehandling
-workspacepath/bin/filehandling
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go <span class="token function">install</span> filehandling
+workspacepath/bin/filehandling<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>该命令可以在其他位置运行。<code>packr</code> 很聪明，可以获取传递给 <code>NewBox</code> 命令的目录的绝对路径。</p>
 <p>该程序会输出：</p>
-<pre class=" language-txt"><code class="language-txt">Contents of file: Hello World. Welcome to file handling in Go.
-</code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">Contents of file: Hello World. Welcome to file handling in Go.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>你可以试着改变 <code>test.txt</code> 的内容，然后再运行 <code>filehandling</code>。可以看到，无需再次编译，程序打印出了 <code>test.txt</code> 的更新内容。完美！</p>
 <p>现在我们来看看如何将 <code>test.txt</code> 打包到我们的二进制文件中。我们使用 <code>packr</code> 命令来实现。</p>
 <p>运行下面的命令：</p>
-<pre class=" language-bash"><code class="language-bash">packr <span class="token function">install</span> -v filehandling
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">packr <span class="token function">install</span> -v filehandling<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>它会打印：</p>
-<pre class=" language-bash"><code class="language-bash">building box <span class="token punctuation">..</span>/filehandling
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">building box <span class="token punctuation">..</span>/filehandling
 packing <span class="token function">file</span> filehandling.go
 packed <span class="token function">file</span> filehandling.go
 packing <span class="token function">file</span> test.txt
 packed <span class="token function">file</span> test.txt
 built box <span class="token punctuation">..</span>/filehandling with <span class="token punctuation">[</span><span class="token string">"filehandling.go"</span> <span class="token string">"test.txt"</span><span class="token punctuation">]</span>
-filehandling
-</code></pre>
+filehandling<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>该命令将静态文件绑定到了二进制文件中。</p>
 <p>在运行上述命令之后，使用命令 <code>workspacepath/bin/filehandling</code> 来运行程序。程序会打印出 <code>test.txt</code> 的内容。于是从二进制文件中，我们读取了 <code>test.txt</code> 的内容。</p>
 <p>如果你不知道文件到底是由二进制还是磁盘来提供，我建议你删除 <code>test.txt</code>，并在此运行 <code>filehandling</code> 命令。你将看到，程序打印出了 <code>test.txt</code> 的内容。太棒了:D。我们已经成功将静态文件嵌入到了二进制文件中。</p>
 <h2 id="分块读取文件"><a href="#分块读取文件" class="headerlink" title="分块读取文件"></a>分块读取文件</h2><p>在前面的章节，我们学习了如何把整个文件读取到内存。当文件非常大时，尤其在 RAM 存储量不足的情况下，把整个文件都读入内存是没有意义的。更好的方法是分块读取文件。这可以使用 <a target="_blank" rel="noopener" href="https://golang.org/pkg/bufio">bufio</a> 包来完成。</p>
 <p>让我们来编写一个程序，以 3 个字节的块为单位读取 <code>test.txt</code> 文件。如下所示，替换 <code>filehandling.go</code> 的内容。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"bufio"</span>
@@ -683,41 +693,41 @@ filehandling
     <span class="token string">"os"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     fptr <span class="token operator">:=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"fpath"</span><span class="token punctuation">,</span> <span class="token string">"test.txt"</span><span class="token punctuation">,</span> <span class="token string">"file path to read from"</span><span class="token punctuation">)</span>
     flag<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
     f<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token operator">*</span>fptr<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> err <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> err <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
             log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     r <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewReader</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
     b <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">&#123;</span>
         <span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">:=</span> r<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
             fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Error reading file:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
             <span class="token keyword">break</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序的第 15 行，我们使用命令行标记传递的路径，打开文件。</p>
 <p>在第 19 行，我们延迟了文件的关闭操作。</p>
 <p>在上面程序的第 24 行，我们新建了一个缓冲读取器（buffered reader）。在下一行，我们创建了长度和容量为 3 的字节切片，程序会把文件的字节读取到切片中。</p>
 <p>第 27 行的 <code>Read</code> <a target="_blank" rel="noopener" href="https://studygolang.com/articles/12264">方法</a>会读取 len(b) 个字节（达到 3 字节），并返回所读取的字节数。当到达文件最后时，它会返回一个 EOF 错误。程序的其他地方比较简单，不做解释。</p>
 <p>如果我们使用下面命令来运行程序：</p>
-<pre class=" language-bash"><code class="language-bash">$ go <span class="token function">install</span> filehandling
-$ wrkspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ go <span class="token function">install</span> filehandling
+$ wrkspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>会得到以下输出：</p>
-<pre class=" language-bash"><code class="language-bash">Hel
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Hel
 lo
 Wor
 ld.
@@ -732,14 +742,14 @@ lin
 g i
 n G
 o.
-Error reading file: EOF
-</code></pre>
+Error reading file: EOF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="逐行读取文件"><a href="#逐行读取文件" class="headerlink" title="逐行读取文件"></a>逐行读取文件</h2><p>本节我们讨论如何使用 Go 逐行读取文件。这可以使用 <a target="_blank" rel="noopener" href="https://golang.org/pkg/bufio/">bufio</a> 来实现。</p>
 <p>请将 <code>test.txt</code> 替换为以下内容。</p>
-<pre><code>Hello World. Welcome to file handling in Go.
+<pre class="line-numbers language-none"><code class="language-none">Hello World. Welcome to file handling in Go.
 This is the second line of the file.
-We have reached the end of the file.
-</code></pre>
+We have reached the end of the file.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>逐行读取文件涉及到以下步骤。</p>
 <ol>
 <li>打开文件；</li>
@@ -747,7 +757,7 @@ We have reached the end of the file.
 <li>扫描文件并且逐行读取。</li>
 </ol>
 <p>将 <code>filehandling.go</code> 替换为以下内容。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token string">"bufio"</span>
@@ -757,41 +767,39 @@ We have reached the end of the file.
     <span class="token string">"os"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     fptr <span class="token operator">:=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"fpath"</span><span class="token punctuation">,</span> <span class="token string">"test.txt"</span><span class="token punctuation">,</span> <span class="token string">"file path to read from"</span><span class="token punctuation">)</span>
     flag<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
     f<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token operator">*</span>fptr<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> err <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> err <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     s <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewScanner</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> s<span class="token punctuation">.</span><span class="token function">Scan</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> s<span class="token punctuation">.</span><span class="token function">Scan</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     err <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">Err</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序的第 15 行，我们用命令行标记传入的路径，打开文件。在第 24 行，我们用文件创建了一个新的 scanner。第 25 行的 <code>Scan()</code> 方法读取文件的下一行，如果可以读取，就可以使用 <code>Text()</code> 方法。</p>
 <p>当 <code>Scan</code> 返回 false 时，除非已经到达文件末尾（此时 <code>Err()</code> 返回 <code>nil</code>），否则 <code>Err()</code> 就会返回扫描过程中出现的错误。</p>
 <p>如果我使用下面命令来运行程序：</p>
-<pre class=" language-bash"><code class="language-bash">$ go <span class="token function">install</span> filehandling
-$ workspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt
-</code></pre>
-<p>程序会输出：</p>
-<pre class=" language-bash"><code class="language-bash">Hello World. Welcome to <span class="token function">file</span> handling <span class="token keyword">in</span> Go.
-This is the second line of the file.
-We have reached the end of the file.
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ go <span class="token function">install</span> filehandling
+$ workspacepath/bin/filehandling -fpath<span class="token operator">=</span>/path-of-file/test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<p>程序会输出：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Hello World. Welcome to <span class="token function">file</span> handling <span class="token keyword">in</span> Go.
+This is the second line of the file.
+We have reached the end of the file.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -874,8 +882,136 @@ We have reached the end of the file.
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -900,7 +1036,7 @@ We have reached the end of the file.
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/17/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/">
+                <a href="/2019/06/17/golang/34.fan-she/">
                     <div class="card-image">
                         
                         
@@ -1154,13 +1290,16 @@ We have reached the end of the file.
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1189,9 +1328,9 @@ We have reached the end of the file.
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1413,7 +1552,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

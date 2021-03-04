@@ -28,7 +28,7 @@
       
         
         
-    <summary type="html">&lt;pre class=&quot; language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;$ mkdir &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;token</summary>
+    <summary type="html">&lt;pre class=&quot;line-numbers language-go&quot; data-language=&quot;go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;$ mkdir &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt;&lt;span</summary>
         
       
     
@@ -82,7 +82,7 @@
         
         
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h3 id=&quot;scp&quot;&gt;&lt;a href=&quot;#scp&quot; class=&quot;headerlink&quot; title=&quot;scp&quot;&gt;&lt;/a&gt;scp&lt;/h3&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code</summary>
+&lt;h3 id=&quot;scp&quot;&gt;&lt;a href=&quot;#scp&quot; class=&quot;headerlink&quot; title=&quot;scp&quot;&gt;&lt;/a&gt;scp&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-python&quot;</summary>
         
       
     

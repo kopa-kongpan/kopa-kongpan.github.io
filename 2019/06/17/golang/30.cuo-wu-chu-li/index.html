@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,19 +308,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -462,16 +449,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-02-10
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.3k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -487,169 +497,169 @@
 <p>在 Go 中，错误一直是很常见的。错误用内建的 <code>error</code> 类型来表示。</p>
 <p>就像其他的内建类型（如 <code>int</code>、<code>float64</code> 等），错误值可以存储在变量里、作为函数的返回值等等。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>现在我们开始编写一个示例，该程序试图打开一个并不存在的文件。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
     <span class="token string">"os"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     f<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token string">"/test.txt"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"opened successfully"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在程序的第 9 行，我们试图打开路径为 <code>/test.txt</code> 的文件（playground 显然并不存在这个文件）。<code>os</code> 包里的 [<code>Open</code>]函数有如下签名：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Open</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>file <span class="token operator">*</span>File<span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Open</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>file <span class="token operator">*</span>File<span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><strong>如果成功打开文件，Open 函数会返回一个文件句柄（File Handler）和一个值为 nil 的错误。而如果打开文件时发生了错误，会返回一个不等于 nil 的错误</strong>。</p>
 <p>如果一个[函数] 或[方法] 返回了错误，按照惯例，错误会作为最后一个值返回。于是 <code>Open</code> 函数也是将 <code>err</code> 作为最后一个返回值。</p>
 <p><strong>按照 Go 的惯例，在处理错误时，通常都是将返回的错误与 nil 比较。nil 值表示了没有错误发生，而非 nil 值表示出现了错误</strong>。在这里，我们第 10 行检查了错误值是否为 <code>nil</code>。如果不是 <code>nil</code>，我们会简单地打印出错误，并在 <code>main</code> 函数中返回。</p>
 <p>运行该程序会输出：</p>
-<pre><code>open /test.txt: No such file or directory
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">open &#x2F;test.txt: No such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>很棒！我们得到了一个错误，它指出该文件并不存在。</p>
 <h2 id="错误类型的表示"><a href="#错误类型的表示" class="headerlink" title="错误类型的表示"></a>错误类型的表示</h2><p>让我们进一步深入，理解 <code>error</code> 类型是如何定义的。<code>error</code> 是一个[接口]类型，定义如下：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> <span class="token builtin">error</span> <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> <span class="token builtin">error</span> <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p><code>error</code> 有了一个签名为 <code>Error() string</code> 的方法。所有实现该接口的类型都可以当作一个错误类型。<code>Error()</code> 方法给出了错误的描述。</p>
 <p><code>fmt.Println</code> 在打印错误时，会在内部调用 <code>Error() string</code> 方法来得到该错误的描述。上一节示例中的第 11 行，就是这样打印出错误的描述的。</p>
 <h2 id="从错误获取更多信息的不同方法"><a href="#从错误获取更多信息的不同方法" class="headerlink" title="从错误获取更多信息的不同方法"></a>从错误获取更多信息的不同方法</h2><p>现在，我们知道了 <code>error</code> 是一个接口类型，让我们看看如何从一个错误获取更多信息。</p>
 <p>在前面的示例里，我们只是打印出错误的描述。如果我们想知道这个错误的文件路径，该怎么做呢？一种选择是直接解析错误的字符串。这是前面示例的输出：</p>
-<pre><code>open /test.txt: No such file or directory
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">open &#x2F;test.txt: No such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><strong>我们解析了这条错误信息，虽然获取了发生错误的文件路径，但是这种方法很不优雅。随着语言版本的更新，这条错误的描述随时都有可能变化，使我们程序出错</strong>。</p>
 <p>有没有更加可靠的方法来获取文件名呢？答案是肯定的，这是可以做到的，Go 标准库给出了各种提取错误相关信息的方法。我们一个个来看看吧。</p>
 <h3 id="1-断言底层结构体类型，使用结构体字段获取更多信息"><a href="#1-断言底层结构体类型，使用结构体字段获取更多信息" class="headerlink" title="1. 断言底层结构体类型，使用结构体字段获取更多信息"></a>1. 断言底层结构体类型，使用结构体字段获取更多信息</h3><p>如果你仔细阅读了 [<code>Open</code>] 函数的文档，你可以看见它返回的错误类型是 <code>*PathError</code>。[<code>PathError</code>]是[结构体]类型，它在标准库中的实现如下：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> PathError <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> PathError <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     Op   <span class="token builtin">string</span>
     Path <span class="token builtin">string</span>
     Err  <span class="token builtin">error</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>PathError<span class="token punctuation">)</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> e<span class="token punctuation">.</span>Op <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>Path <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>Err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>PathError<span class="token punctuation">)</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> e<span class="token punctuation">.</span>Op <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>Path <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>Err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>通过上面的代码，你就知道了 <code>*PathError</code> 通过声明 <code>Error() string</code> 方法，实现了 <code>error</code> 接口。<code>Error() string</code> 将文件操作、路径和实际错误拼接，并返回该字符串。于是我们得到该错误信息：</p>
-<pre><code>open /test.txt: No such file or directory
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">open &#x2F;test.txt: No such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>结构体 <code>PathError</code> 的 <code>Path</code> 字段，就有导致错误的文件路径。我们修改前面写的程序，打印出该路径。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
     <span class="token string">"os"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     f<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token string">"/test.txt"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err<span class="token punctuation">,</span> ok <span class="token operator">:=</span> err<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">*</span>os<span class="token punctuation">.</span>PathError<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err<span class="token punctuation">,</span> ok <span class="token operator">:=</span> err<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">*</span>os<span class="token punctuation">.</span>PathError<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"File at path"</span><span class="token punctuation">,</span> err<span class="token punctuation">.</span>Path<span class="token punctuation">,</span> <span class="token string">"failed to open"</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"opened successfully"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的程序里，我们在第 10 行使用了[类型断言]（Type Assertion）来获取 <code>error</code> 接口的底层值（Underlying Value）。接下来在第 11 行，我们使用 <code>err.Path</code> 来打印该路径。该程序会输出：</p>
-<pre><code>File at path /test.txt failed to open
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">File at path &#x2F;test.txt failed to open<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>很棒！我们已经使用类型断言成功获取到了该错误的文件路径。</p>
 <h3 id="2-断言底层结构体类型，调用方法获取更多信息"><a href="#2-断言底层结构体类型，调用方法获取更多信息" class="headerlink" title="2. 断言底层结构体类型，调用方法获取更多信息"></a>2. 断言底层结构体类型，调用方法获取更多信息</h3><p>第二种获取更多错误信息的方法，也是对底层类型进行断言，然后通过调用该结构体类型的方法，来获取更多的信息。</p>
 <p>我们通过一个实例来理解这一点。</p>
 <p>标准库中的 <code>DNSError</code> 结构体类型定义如下：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> DNSError <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> DNSError <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     <span class="token operator">...</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>DNSError<span class="token punctuation">)</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>DNSError<span class="token punctuation">)</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token operator">...</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>DNSError<span class="token punctuation">)</span> <span class="token function">Timeout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>DNSError<span class="token punctuation">)</span> <span class="token function">Timeout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">&#123;</span>  
     <span class="token operator">...</span> 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>DNSError<span class="token punctuation">)</span> <span class="token function">Temporary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>DNSError<span class="token punctuation">)</span> <span class="token function">Temporary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">&#123;</span>  
     <span class="token operator">...</span> 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>从上述代码可以看到，<code>DNSError</code> 结构体还有 <code>Timeout() bool</code> 和 <code>Temporary() bool</code> 两个方法，它们返回一个布尔值，指出该错误是由超时引起的，还是临时性错误。</p>
 <p>接下来我们编写一个程序，断言 <code>*DNSError</code> 类型，并调用这些方法来确定该错误是临时性错误，还是由超时导致的。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
     <span class="token string">"net"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     addr<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">LookupHost</span><span class="token punctuation">(</span><span class="token string">"golangbot123.com"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err<span class="token punctuation">,</span> ok <span class="token operator">:=</span> err<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">*</span>net<span class="token punctuation">.</span>DNSError<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> err<span class="token punctuation">.</span><span class="token function">Timeout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> err<span class="token punctuation">,</span> ok <span class="token operator">:=</span> err<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">*</span>net<span class="token punctuation">.</span>DNSError<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> err<span class="token punctuation">.</span><span class="token function">Timeout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"operation timed out"</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> err<span class="token punctuation">.</span><span class="token function">Temporary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> err<span class="token punctuation">.</span><span class="token function">Temporary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"temporary error"</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
             fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"generic error: "</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>addr<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>注：在 playground 无法进行 DNS 解析。请在你的本地运行该程序</strong>。</p>
 <p>在上述程序中，我们在第 9 行，试图获取 <code>golangbot123.com</code>（无效的域名） 的 ip。在第 10 行，我们通过 <code>*net.DNSError</code> 的类型断言，获取到了错误的底层值。接下来的第 11 行和第 13 行，我们分别检查了该错误是由超时引起的，还是一个临时性错误。</p>
 <p>在本例中，我们的错误既不是临时性错误，也不是由超时引起的，因此该程序输出：</p>
-<pre><code>generic error:  lookup golangbot123.com: no such host
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">generic error:  lookup golangbot123.com: no such host<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>如果该错误是临时性错误，或是由超时引发的，那么对应的 if 语句会执行，于是我们就可以适当地处理它们。</p>
 <h3 id="3-直接比较"><a href="#3-直接比较" class="headerlink" title="3. 直接比较"></a>3. 直接比较</h3><p>第三种获取错误的更多信息的方式，是与 <code>error</code> 类型的变量直接比较。我们通过一个示例来理解。</p>
 <p><code>filepath</code> 包中的 [<code>Glob</code>] 用于返回满足 glob 模式的所有文件名。如果模式写的不对，该函数会返回一个错误 <code>ErrBadPattern</code>。</p>
 <p><code>filepath</code> 包中的 <code>ErrBadPattern</code> 定义如下：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">var</span> ErrBadPattern <span class="token operator">=</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"syntax error in pattern"</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">var</span> ErrBadPattern <span class="token operator">=</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"syntax error in pattern"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><code>errors.New()</code> 用于创建一个新的错误。我们会在下一教程中详细讨论它。</p>
 <p>当模式不正确时，<code>Glob</code> 函数会返回 <code>ErrBadPattern</code>。</p>
 <p>我们来写一个小程序来看看这个错误。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
     <span class="token string">"path/filepath"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     files<span class="token punctuation">,</span> <span class="token builtin">error</span> <span class="token operator">:=</span> filepath<span class="token punctuation">.</span><span class="token function">Glob</span><span class="token punctuation">(</span><span class="token string">"["</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token builtin">error</span> <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin">error</span> <span class="token operator">==</span> filepath<span class="token punctuation">.</span>ErrBadPattern <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token builtin">error</span> <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin">error</span> <span class="token operator">==</span> filepath<span class="token punctuation">.</span>ErrBadPattern <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token builtin">error</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"matched files"</span><span class="token punctuation">,</span> files<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序里，我们查询了模式为 <code>[</code> 的文件，然而这个模式写的不正确。我们检查了该错误是否为 <code>nil</code>。为了获取该错误的更多信息，我们在第 10 行将 <code>error</code> 直接与 <code>filepath.ErrBadPattern</code> 相比较。如果该条件满足，那么该错误就是由模式错误导致的。该程序会输出：</p>
-<pre><code>syntax error in pattern
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">syntax error in pattern<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>标准库在提供错误的详细信息时，使用到了上述提到的三种方法。在下一教程里，我们会通过这些方法来创建我们自己的自定义错误。</p>
 <h2 id="不可忽略错误"><a href="#不可忽略错误" class="headerlink" title="不可忽略错误"></a>不可忽略错误</h2><p>绝不要忽略错误。忽视错误会带来问题。接下来我重写上面的示例，在列出所有满足模式的文件名时，我省略了错误处理的代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
     <span class="token string">"path/filepath"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     files<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> filepath<span class="token punctuation">.</span><span class="token function">Glob</span><span class="token punctuation">(</span><span class="token string">"["</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"matched files"</span><span class="token punctuation">,</span> files<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们已经从前面的示例知道了这个模式是错误的。在第 9 行，通过使用 <code>_</code> 空白标识符，我忽略了 <code>Glob</code> 函数返回的错误。我在第 10 行简单打印了所有匹配的文件。该程序会输出：</p>
-<pre><code>matched files []
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">matched files []<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>由于我忽略了错误，输出看起来就像是没有任何匹配了 glob 模式的文件，但实际上这是因为模式的写法不对。所以绝不要忽略错误。</p>
 <p>本教程到此结束。</p>
 <p>这一教程我们讨论了该如何处理程序中出现的错误，也讨论了如何查询关于错误的更多信息。简单概括一下本教程讨论的内容：</p>
@@ -742,8 +752,136 @@
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -805,7 +943,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/17/golang/32.panic-he-recover/">
+                <a href="/2019/06/17/golang/31.zi-ding-yi-cuo-wu/">
                     <div class="card-image">
                         
                         
@@ -1022,13 +1160,16 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1057,9 +1198,9 @@
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1281,7 +1422,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

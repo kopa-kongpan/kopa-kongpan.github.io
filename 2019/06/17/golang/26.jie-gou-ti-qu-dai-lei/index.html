@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,19 +308,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -462,16 +449,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-02-10
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -493,146 +503,146 @@
 <p>在示例中，我们创建一个自定义[包]，它帮助我们更好地理解，结构体是如何有效地取代类的。</p>
 <p>在你的 Go 工作区创建一个名为 <code>oop</code> 的文件夹。在 <code>opp</code> 中再创建子文件夹 <code>employee</code>。在 <code>employee</code> 内，创建一个名为 <code>employee.go</code> 的文件。</p>
 <p>文件夹结构会是这样：</p>
-<pre><code>workspacepath -&gt; oop -&gt; employee -&gt; employee.go
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">workspacepath -&gt; oop -&gt; employee -&gt; employee.go<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>请将 <code>employee.go</code> 里的内容替换为如下所示的代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> employee
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> employee
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> Employee <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Employee <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     FirstName   <span class="token builtin">string</span>
     LastName    <span class="token builtin">string</span>
     TotalLeaves <span class="token builtin">int</span>
     LeavesTaken <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e Employee<span class="token punctuation">)</span> <span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s %s has %d leaves remaining"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>FirstName<span class="token punctuation">,</span> e<span class="token punctuation">.</span>LastName<span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>TotalLeaves <span class="token operator">-</span> e<span class="token punctuation">.</span>LeavesTaken<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上述程序里，第 1 行指定了该文件属于 <code>employee</code> 包。而第 7 行声明了一个 <code>Employee</code> 结构体。在第 14 行，结构体 <code>Employee</code> 添加了一个名为 <code>LeavesRemaining</code> 的方法。该方法会计算和显示员工的剩余休假数。于是现在我们有了一个结构体，并绑定了结构体的方法，这与类很相似。</p>
 <p>接着在 <code>oop</code> 文件夹里创建一个文件，命名为 <code>main.go</code>。</p>
 <p>现在目录结构如下所示：  </p>
-<pre><code>workspacepath -&gt; oop -&gt; employee -&gt; employee.go  
-workspacepath -&gt; oop -&gt; main.go
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">workspacepath -&gt; oop -&gt; employee -&gt; employee.go  
+workspacepath -&gt; oop -&gt; main.go<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><code>main.go</code> 的内容如下所示：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"oop/employee"</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    e <span class="token operator">:=</span> employee<span class="token punctuation">.</span>Employee <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    e <span class="token operator">:=</span> employee<span class="token punctuation">.</span>Employee <span class="token punctuation">&#123;</span>
         FirstName<span class="token punctuation">:</span> <span class="token string">"Sam"</span><span class="token punctuation">,</span>
         LastName<span class="token punctuation">:</span> <span class="token string">"Adolf"</span><span class="token punctuation">,</span>
         TotalLeaves<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
         LeavesTaken<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     e<span class="token punctuation">.</span><span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们在第 3 行引用了 <code>employee</code> 包。在 <code>main()</code>（第 12 行），我们调用了 <code>Employee</code> 的 <code>LeavesRemaining()</code> 方法。</p>
 <p>由于有自定义包，这个程序不能在 go playground 上运行。你可以在你的本地运行，在 <code>workspacepath/bin/oop</code> 下输入命令 <code>go install opp</code>，程序会打印输出：</p>
-<pre class=" language-bash"><code class="language-bash">Sam Adolf has 10 leaves remaining
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Sam Adolf has <span class="token number">10</span> leaves remaining<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h2 id="使用-New-函数，而非构造器"><a href="#使用-New-函数，而非构造器" class="headerlink" title="使用 New() 函数，而非构造器"></a>使用 New() 函数，而非构造器</h2><p>我们上面写的程序看起来没什么问题，但还是有一些细节问题需要注意。我们看看当定义一个零值的 <code>employee</code> 结构体变量时，会发生什么。将 <code>main.go</code> 的内容修改为如下代码：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"oop/employee"</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> e employee<span class="token punctuation">.</span>Employee
     e<span class="token punctuation">.</span><span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们的修改只是创建一个零值的 <code>Employee</code> 结构体变量（第 6 行）。该程序会输出：</p>
-<pre class=" language-bash"><code class="language-bash">has 0 leaves remaining
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">has <span class="token number">0</span> leaves remaining<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>你可以看到，使用 <code>Employee</code> 创建的零值变量没有什么用。它没有合法的姓名，也没有合理的休假细节。</p>
 <p>在像 Java 这样的 OOP 语言中，是使用构造器来解决这种问题的。一个合法的对象必须使用参数化的构造器来创建。</p>
 <p>Go 并不支持构造器。如果某类型的零值不可用，需要程序员来隐藏该类型，避免从其他包直接访问。程序员应该提供一种名为 <code>NewT(parameters)</code> 的 [函数]，按照要求来初始化 <code>T</code> 类型的变量。按照 Go 的惯例，应该把创建 <code>T</code> 类型变量的函数命名为 <code>NewT(parameters)</code>。这就类似于构造器了。如果一个包只含有一种类型，按照 Go 的惯例，应该把函数命名为 <code>New(parameters)</code>， 而不是 <code>NewT(parameters)</code>。</p>
 <p>让我修改一下原先的代码，使得每当创建 <code>employee</code> 的时候，它都是可用的。</p>
 <p>首先应该让 <code>Employee</code> 结构体不可引用，然后创建一个 <code>New</code> 函数，用于创建 <code>Employee</code> 结构体变量。在 <code>employee.go</code> 中输入下面代码：  </p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> employee
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> employee
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> employee <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> employee <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName   <span class="token builtin">string</span>
     lastName    <span class="token builtin">string</span>
     totalLeaves <span class="token builtin">int</span>
     leavesTaken <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">New</span><span class="token punctuation">(</span>firstName <span class="token builtin">string</span><span class="token punctuation">,</span> lastName <span class="token builtin">string</span><span class="token punctuation">,</span> totalLeave <span class="token builtin">int</span><span class="token punctuation">,</span> leavesTaken <span class="token builtin">int</span><span class="token punctuation">)</span> employee <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    e <span class="token operator">:=</span> employee <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> totalLeave<span class="token punctuation">,</span> leavesTaken<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">New</span><span class="token punctuation">(</span>firstName <span class="token builtin">string</span><span class="token punctuation">,</span> lastName <span class="token builtin">string</span><span class="token punctuation">,</span> totalLeave <span class="token builtin">int</span><span class="token punctuation">,</span> leavesTaken <span class="token builtin">int</span><span class="token punctuation">)</span> employee <span class="token punctuation">&#123;</span>  
+    e <span class="token operator">:=</span> employee <span class="token punctuation">&#123;</span>firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> totalLeave<span class="token punctuation">,</span> leavesTaken<span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> e
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e employee<span class="token punctuation">)</span> <span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e employee<span class="token punctuation">)</span> <span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s %s has %d leaves remaining"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span> e<span class="token punctuation">.</span>lastName<span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>totalLeaves <span class="token operator">-</span> e<span class="token punctuation">.</span>leavesTaken<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们进行了一些重要的修改。我们把 <code>Employee</code> 结构体的首字母改为小写 <code>e</code>，也就是将 <code>type Employee struct</code> 改为了 <code>type employee struct</code>。通过这种方法，我们把 <code>employee</code> 结构体变为了不可引用的，防止其他包对它的访问。除非有特殊需求，否则也要隐藏所有不可引用的结构体的所有字段，这是 Go 的最佳实践。由于我们不会在外部包需要 <code>employee</code> 的字段，因此我们也让这些字段无法引用。</p>
 <p>同样，我们还修改了 <code>LeavesRemaining()</code> 的方法。</p>
 <p>现在由于 <code>employee</code> 不可引用，因此不能在其他包内直接创建 <code>Employee</code> 类型的变量。于是我们在第 14 行提供了一个可引用的 <code>New</code> 函数，该函数接收必要的参数，返回一个新创建的 <code>employee</code> 结构体变量。</p>
 <p>这个程序还需要一些必要的修改，但现在先运行这个程序，理解一下当前的修改。如果运行当前程序，编译器会报错，如下所示：</p>
-<pre class=" language-bash"><code class="language-bash">go/src/constructor/main.go:6: undefined: employee.Employee
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go/src/constructor/main.go:6: undefined: employee.Employee<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>这是因为我们将 <code>Employee</code> 设置为不可引用，因此编译器会报错，提示该类型没有在 <code>main.go</code> 中定义。很完美，正如我们期望的一样，其他包现在不能轻易创建零值的 <code>employee</code> 变量了。我们成功地避免了创建不可用的 <code>employee</code> 结构体变量。现在创建 <code>employee</code> 变量的唯一方法就是使用 <code>New</code> 函数。</p>
 <p>如下所示，修改 <code>main.go</code> 里的内容。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main  
 
 <span class="token keyword">import</span> <span class="token string">"oop/employee"</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     e <span class="token operator">:=</span> employee<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"Sam"</span><span class="token punctuation">,</span> <span class="token string">"Adolf"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
     e<span class="token punctuation">.</span><span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>该文件唯一的修改就是第 6 行。通过向 <code>New</code> 函数传入所需变量，我们创建了一个新的 <code>employee</code> 结构体变量。</p>
 <p>下面是修改后的两个文件的内容。</p>
 <p>employee.go</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> employee
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> employee
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> employee <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> employee <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName   <span class="token builtin">string</span>
     lastName    <span class="token builtin">string</span>
     totalLeaves <span class="token builtin">int</span>
     leavesTaken <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">New</span><span class="token punctuation">(</span>firstName <span class="token builtin">string</span><span class="token punctuation">,</span> lastName <span class="token builtin">string</span><span class="token punctuation">,</span> totalLeave <span class="token builtin">int</span><span class="token punctuation">,</span> leavesTaken <span class="token builtin">int</span><span class="token punctuation">)</span> employee <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    e <span class="token operator">:=</span> employee <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> totalLeave<span class="token punctuation">,</span> leavesTaken<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">New</span><span class="token punctuation">(</span>firstName <span class="token builtin">string</span><span class="token punctuation">,</span> lastName <span class="token builtin">string</span><span class="token punctuation">,</span> totalLeave <span class="token builtin">int</span><span class="token punctuation">,</span> leavesTaken <span class="token builtin">int</span><span class="token punctuation">)</span> employee <span class="token punctuation">&#123;</span>  
+    e <span class="token operator">:=</span> employee <span class="token punctuation">&#123;</span>firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> totalLeave<span class="token punctuation">,</span> leavesTaken<span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> e
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>e employee<span class="token punctuation">)</span> <span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e employee<span class="token punctuation">)</span> <span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s %s has %d leaves remaining"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span> e<span class="token punctuation">.</span>lastName<span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>totalLeaves <span class="token operator">-</span> e<span class="token punctuation">.</span>leavesTaken<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>main.go</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main  
 
 <span class="token keyword">import</span> <span class="token string">"oop/employee"</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     e <span class="token operator">:=</span> employee<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"Sam"</span><span class="token punctuation">,</span> <span class="token string">"Adolf"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
     e<span class="token punctuation">.</span><span class="token function">LeavesRemaining</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>运行该程序，会输出：</p>
-<pre class=" language-bash"><code class="language-bash">Sam Adolf has 10 leaves remaining
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Sam Adolf has <span class="token number">10</span> leaves remaining<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>现在你能明白了，虽然 Go 不支持类，但结构体能够很好地取代类，而以 <code>New(parameters)</code> 签名的方法可以替代构造器。</p>
 
                 
@@ -717,8 +727,136 @@ workspacepath -&gt; oop -&gt; main.go
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -743,7 +881,7 @@ workspacepath -&gt; oop -&gt; main.go
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/17/golang/22.xin-dao-channel/">
+                <a href="/2019/06/17/golang/27.zu-he-qu-dai-ji-cheng/">
                     <div class="card-image">
                         
                         
@@ -780,7 +918,7 @@ workspacepath -&gt; oop -&gt; main.go
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/17/golang/27.zu-he-qu-dai-ji-cheng/">
+                <a href="/2019/06/17/golang/28.duo-tai/">
                     <div class="card-image">
                         
                         
@@ -997,13 +1135,16 @@ workspacepath -&gt; oop -&gt; main.go
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1032,9 +1173,9 @@ workspacepath -&gt; oop -&gt; main.go
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1256,7 +1397,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

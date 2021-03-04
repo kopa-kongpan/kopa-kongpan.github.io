@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,19 +308,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -462,16 +449,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-02-10
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -488,239 +498,239 @@
 <p><strong>所有实现了接口的类型，都可以把它的值保存在一个接口类型的变量中。在 Go 中，我们使用接口的这种特性来实现多态</strong>。</p>
 <p>通过一个程序我们来理解 Go 语言的多态，它会计算一个组织机构的净收益。为了简单起见，我们假设这个虚构的组织所获得的收入来源于两个项目：<code>fixed billing</code> 和 <code>time and material</code>。该组织的净收益等于这两个项目的收入总和。同样为了简单起见，我们假设货币单位是美元，而无需处理美分。因此货币只需简单地用 <code>int</code> 来表示。</p>
 <p>我们首先定义一个接口 <code>Income</code>。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> Income <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> Income <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
     <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面定义了接口 <code>Interface</code>，它包含了两个方法：<code>calculate()</code> 计算并返回项目的收入，而 <code>source()</code> 返回项目名称。</p>
 <p>下面我们定义一个表示 <code>FixedBilling</code> 项目的结构体类型。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> FixedBilling <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> FixedBilling <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     projectName <span class="token builtin">string</span>
     biddedAmount <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>项目 <code>FixedBillin</code> 有两个字段：<code>projectName</code> 表示项目名称，而 <code>biddedAmount</code> 表示组织向该项目投标的金额。</p>
 <p><code>TimeAndMaterial</code> 结构体用于表示项目 Time and Material。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> TimeAndMaterial <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> TimeAndMaterial <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     projectName <span class="token builtin">string</span>
     noOfHours  <span class="token builtin">int</span>
     hourlyRate <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>结构体 <code>TimeAndMaterial</code> 拥有三个字段名：<code>projectName</code>、<code>noOfHours</code> 和 <code>hourlyRate</code>。</p>
 <p>下一步我们给这些结构体类型定义方法，计算并返回实际收入和项目名称。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fb<span class="token punctuation">.</span>biddedAmount
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fb<span class="token punctuation">.</span>projectName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> tm<span class="token punctuation">.</span>noOfHours <span class="token operator">*</span> tm<span class="token punctuation">.</span>hourlyRate
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> tm<span class="token punctuation">.</span>projectName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在项目 <code>FixedBilling</code> 里面，收入就是项目的投标金额。因此我们返回 <code>FixedBilling</code> 类型的 <code>calculate()</code> 方法。</p>
 <p>而在项目 <code>TimeAndMaterial</code> 里面，收入等于 <code>noOfHours</code> 和 <code>hourlyRate</code> 的乘积，作为 <code>TimeAndMaterial</code> 类型的 <code>calculate()</code> 方法的返回值。</p>
 <p>我们还通过 <code>source()</code> 方法返回了表示收入来源的项目名称。</p>
 <p>由于 <code>FixedBilling</code> 和 <code>TimeAndMaterial</code> 两个结构体都定义了 <code>Income</code> 接口的两个方法：<code>calculate()</code> 和 <code>source()</code>，因此这两个结构体都实现了 <code>Income</code> 接口。</p>
 <p>我们来声明一个 <code>calculateNetIncome</code> 函数，用来计算并打印总收入。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>ic <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>ic <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> netincome <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> income <span class="token operator">:=</span> <span class="token keyword">range</span> ic <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> income <span class="token operator">:=</span> <span class="token keyword">range</span> ic <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Income From %s = $%d\n"</span><span class="token punctuation">,</span> income<span class="token punctuation">.</span><span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> income<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         netincome <span class="token operator">+=</span> income<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Net income of organisation = $%d"</span><span class="token punctuation">,</span> netincome<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面的[函数]接收一个 <code>Income</code> 接口类型的[切片]作为参数。该函数会遍历这个接口切片，并依个调用 <code>calculate()</code> 方法，计算出总收入。该函数同样也会通过调用 <code>source()</code> 显示收入来源。根据 <code>Income</code> 接口的具体类型，程序会调用不同的 <code>calculate()</code> 和 <code>source()</code> 方法。于是，我们在 <code>calculateNetIncome</code> 函数中就实现了多态。</p>
 <p>如果在该组织以后增加了新的收入来源，<code>calculateNetIncome</code> 无需修改一行代码，就可以正确地计算总收入了。</p>
 <p>最后就剩下这个程序的 <code>main</code> 函数了。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    project1 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project2 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    project1 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">&#125;</span>
+    project2 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">&#125;</span>
+    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">&#125;</span>
+    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">&#123;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token punctuation">&#125;</span>
     <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>incomeStreams<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的 <code>main</code> 函数中，我们创建了三个项目，有两个是 <code>FixedBilling</code> 类型，一个是 <code>TimeAndMaterial</code> 类型。接着我们创建了一个 <code>Income</code> 类型的切片，存放了这三个项目。由于这三个项目都实现了 <code>Interface</code> 接口，因此可以把这三个项目放入 <code>Income</code> 切片。最后我们将该切片作为参数，调用了 <code>calculateNetIncome</code> 函数，显示了项目不同的收益和收入来源。</p>
 <p>以下完整的代码供你参考。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> Income <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Income <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
     <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> FixedBilling <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> FixedBilling <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     projectName <span class="token builtin">string</span>
     biddedAmount <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> TimeAndMaterial <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> TimeAndMaterial <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     projectName <span class="token builtin">string</span>
     noOfHours  <span class="token builtin">int</span>
     hourlyRate <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fb<span class="token punctuation">.</span>biddedAmount
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fb<span class="token punctuation">.</span>projectName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> tm<span class="token punctuation">.</span>noOfHours <span class="token operator">*</span> tm<span class="token punctuation">.</span>hourlyRate
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> tm<span class="token punctuation">.</span>projectName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>ic <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>ic <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> netincome <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> income <span class="token operator">:=</span> <span class="token keyword">range</span> ic <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> income <span class="token operator">:=</span> <span class="token keyword">range</span> ic <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Income From %s = $%d\n"</span><span class="token punctuation">,</span> income<span class="token punctuation">.</span><span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> income<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         netincome <span class="token operator">+=</span> income<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Net income of organisation = $%d"</span><span class="token punctuation">,</span> netincome<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    project1 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project2 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    project1 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">&#125;</span>
+    project2 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">&#125;</span>
+    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">&#125;</span>
+    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">&#123;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token punctuation">&#125;</span>
     <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>incomeStreams<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>该程序会输出：</p>
-<pre><code>Income From Project 1 = $5000  
-Income From Project 2 = $10000  
-Income From Project 3 = $4000  
-Net income of organisation = $19000
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Income From Project 1 &#x3D; $5000  
+Income From Project 2 &#x3D; $10000  
+Income From Project 3 &#x3D; $4000  
+Net income of organisation &#x3D; $19000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="新增收益流"><a href="#新增收益流" class="headerlink" title="新增收益流"></a>新增收益流</h2><p>假设前面的组织通过广告业务，建立了一个新的收益流（Income Stream）。我们可以看到添加它非常简单，并且计算总收益也很容易，我们无需对 <code>calculateNetIncome</code> 函数进行任何修改。这就是多态的好处。</p>
 <p>我们首先定义 <code>Advertisement</code> 类型，并在 <code>Advertisement</code> 类型中定义 <code>calculate()</code> 和 <code>source()</code> 方法。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> Advertisement <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> Advertisement <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     adName     <span class="token builtin">string</span>
     CPC        <span class="token builtin">int</span>
     noOfClicks <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> a<span class="token punctuation">.</span>CPC <span class="token operator">*</span> a<span class="token punctuation">.</span>noOfClicks
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> a<span class="token punctuation">.</span>adName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>Advertisement</code> 类型有三个字段，分别是 <code>adName</code>、<code>CPC</code>（每次点击成本）和 <code>noOfClicks</code>（点击次数）。广告的总收益等于 <code>CPC</code> 和 <code>noOfClicks</code> 的乘积。</p>
 <p>现在我们稍微修改一下 <code>main</code> 函数，把新的收益流添加进来。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    project1 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project2 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    bannerAd <span class="token operator">:=</span> Advertisement<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>adName<span class="token punctuation">:</span> <span class="token string">"Banner Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">500</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    popupAd <span class="token operator">:=</span> Advertisement<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>adName<span class="token punctuation">:</span> <span class="token string">"Popup Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">750</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token punctuation">,</span> bannerAd<span class="token punctuation">,</span> popupAd<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    project1 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">&#125;</span>
+    project2 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">&#125;</span>
+    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">&#125;</span>
+    bannerAd <span class="token operator">:=</span> Advertisement<span class="token punctuation">&#123;</span>adName<span class="token punctuation">:</span> <span class="token string">"Banner Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">&#125;</span>
+    popupAd <span class="token operator">:=</span> Advertisement<span class="token punctuation">&#123;</span>adName<span class="token punctuation">:</span> <span class="token string">"Popup Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">750</span><span class="token punctuation">&#125;</span>
+    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">&#123;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token punctuation">,</span> bannerAd<span class="token punctuation">,</span> popupAd<span class="token punctuation">&#125;</span>
     <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>incomeStreams<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们创建了两个广告项目，即 <code>bannerAd</code> 和 <code>popupAd</code>。<code>incomeStream</code> 切片包含了这两个创建的广告项目。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> Income <span class="token keyword">interface</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Income <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
     <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> FixedBilling <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> FixedBilling <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     projectName  <span class="token builtin">string</span>
     biddedAmount <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> TimeAndMaterial <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> TimeAndMaterial <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     projectName <span class="token builtin">string</span>
     noOfHours   <span class="token builtin">int</span>
     hourlyRate  <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> Advertisement <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> Advertisement <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     adName     <span class="token builtin">string</span>
     CPC        <span class="token builtin">int</span>
     noOfClicks <span class="token builtin">int</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fb<span class="token punctuation">.</span>biddedAmount
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>fb FixedBilling<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fb<span class="token punctuation">.</span>projectName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> tm<span class="token punctuation">.</span>noOfHours <span class="token operator">*</span> tm<span class="token punctuation">.</span>hourlyRate
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>tm TimeAndMaterial<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> tm<span class="token punctuation">.</span>projectName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> a<span class="token punctuation">.</span>CPC <span class="token operator">*</span> a<span class="token punctuation">.</span>noOfClicks
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a Advertisement<span class="token punctuation">)</span> <span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> a<span class="token punctuation">.</span>adName
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>ic <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>ic <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> netincome <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> income <span class="token operator">:=</span> <span class="token keyword">range</span> ic <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> income <span class="token operator">:=</span> <span class="token keyword">range</span> ic <span class="token punctuation">&#123;</span>
         fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Income From %s = $%d\n"</span><span class="token punctuation">,</span> income<span class="token punctuation">.</span><span class="token function">source</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> income<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         netincome <span class="token operator">+=</span> income<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Net income of organisation = $%d"</span><span class="token punctuation">,</span> netincome<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    project1 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project2 <span class="token operator">:=</span> FixedBilling<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    bannerAd <span class="token operator">:=</span> Advertisement<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>adName<span class="token punctuation">:</span> <span class="token string">"Banner Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">500</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    popupAd <span class="token operator">:=</span> Advertisement<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>adName<span class="token punctuation">:</span> <span class="token string">"Popup Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">750</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token punctuation">,</span> bannerAd<span class="token punctuation">,</span> popupAd<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    project1 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 1"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">&#125;</span>
+    project2 <span class="token operator">:=</span> FixedBilling<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 2"</span><span class="token punctuation">,</span> biddedAmount<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">&#125;</span>
+    project3 <span class="token operator">:=</span> TimeAndMaterial<span class="token punctuation">&#123;</span>projectName<span class="token punctuation">:</span> <span class="token string">"Project 3"</span><span class="token punctuation">,</span> noOfHours<span class="token punctuation">:</span> <span class="token number">160</span><span class="token punctuation">,</span> hourlyRate<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">&#125;</span>
+    bannerAd <span class="token operator">:=</span> Advertisement<span class="token punctuation">&#123;</span>adName<span class="token punctuation">:</span> <span class="token string">"Banner Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">&#125;</span>
+    popupAd <span class="token operator">:=</span> Advertisement<span class="token punctuation">&#123;</span>adName<span class="token punctuation">:</span> <span class="token string">"Popup Ad"</span><span class="token punctuation">,</span> CPC<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> noOfClicks<span class="token punctuation">:</span> <span class="token number">750</span><span class="token punctuation">&#125;</span>
+    incomeStreams <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>Income<span class="token punctuation">&#123;</span>project1<span class="token punctuation">,</span> project2<span class="token punctuation">,</span> project3<span class="token punctuation">,</span> bannerAd<span class="token punctuation">,</span> popupAd<span class="token punctuation">&#125;</span>
     <span class="token function">calculateNetIncome</span><span class="token punctuation">(</span>incomeStreams<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面程序会输出：</p>
-<pre><code>Income From Project 1 = $5000  
-Income From Project 2 = $10000  
-Income From Project 3 = $4000  
-Income From Banner Ad = $1000  
-Income From Popup Ad = $3750  
-Net income of organisation = $23750
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">Income From Project 1 &#x3D; $5000  
+Income From Project 2 &#x3D; $10000  
+Income From Project 3 &#x3D; $4000  
+Income From Banner Ad &#x3D; $1000  
+Income From Popup Ad &#x3D; $3750  
+Net income of organisation &#x3D; $23750<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>你会发现，尽管我们新增了收益流，但却完全没有修改 <code>calculateNetIncome</code> 函数。这就是多态带来的好处。由于新的 <code>Advertisement</code> 同样实现了 <code>Income</code> 接口，所以我们能够向 <code>incomeStreams</code> 切片添加 <code>Advertisement</code>。<code>calculateNetIncome</code> 无需修改，因为它能够调用 <code>Advertisement</code> 类型的 <code>calculate()</code> 和 <code>source()</code> 方法。</p>
 
                 
@@ -805,8 +815,136 @@ Net income of organisation = $23750
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -831,7 +969,7 @@ Net income of organisation = $23750
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/17/golang/27.zu-he-qu-dai-ji-cheng/">
+                <a href="/2019/06/17/golang/26.jie-gou-ti-qu-dai-lei/">
                     <div class="card-image">
                         
                         
@@ -1085,13 +1223,16 @@ Net income of organisation = $23750
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1120,9 +1261,9 @@ Net income of organisation = $23750
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1344,7 +1485,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

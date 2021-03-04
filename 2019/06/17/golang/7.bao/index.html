@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,23 +308,10 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
 
 
 
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,16 +462,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-06-17
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.8k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -505,83 +515,83 @@
 <p><strong>package packagename 这行代码指定了某一源文件属于一个包。它应该放在每一个源文件的第一行。</strong></p>
 <p>下面开始为我们的程序创建一个 main 函数和 main 包。<strong>在 Go 工作区内的 src 文件夹中创建一个文件夹，命名为 geometry</strong>。在 <code>geometry</code> 文件夹中创建一个 <code>geometry.go</code> 文件。</p>
 <p>在 geometry.go 中编写下面代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// geometry.go</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// geometry.go</span>
 <span class="token keyword">package</span> main 
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Geometrical shape properties"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>package main</code> 这一行指定该文件属于 main 包。<code>import &quot;packagename&quot;</code> 语句用于导入一个已存在的包。在这里我们导入了 <code>fmt</code> 包，包内含有 Println 方法。接下来是 main 函数，它会打印 <code>Geometrical shape properties</code>。</p>
 <p>键入 <code>go install geometry</code>，编译上述程序。该命令会在 <code>geometry</code> 文件夹内搜索拥有 main 函数的文件。在这里，它找到了 <code>geometry.go</code>。接下来，它编译并产生一个名为 <code>geometry</code> （在 windows 下是 <code>geometry.exe</code>）的二进制文件，该二进制文件放置于工作区的 bin 文件夹。现在，工作区的目录结构会是这样：</p>
-<pre><code>src
+<pre class="line-numbers language-none"><code class="language-none">src
     geometry
         gemometry.go
 bin
-    geometry
-</code></pre>
+    geometry<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>键入 <code>workspacepath/bin/geometry</code>，运行该程序。请用你自己的 Go 工作区来替换 <code>workspacepath</code>。这个命令会执行 bin 文件夹里的 <code>geometry</code> 二进制文件。你应该会输出 <code>Geometrical shape properties</code>。</p>
 <h3 id="创建自定义的包"><a href="#创建自定义的包" class="headerlink" title="创建自定义的包"></a>创建自定义的包</h3><p>我们将组织代码，使得所有与矩形有关的功能都放入 <code>rectangle</code> 包中。</p>
 <p>我们会创建一个自定义包 <code>rectangle</code>，它有一个计算矩形的面积和对角线的函数。</p>
 <p><strong>属于某一个包的源文件都应该放置于一个单独命名的文件夹里。按照 Go 的惯例，应该用包名命名该文件夹。</strong></p>
 <p>因此，我们在 <code>geometry</code> 文件夹中，创建一个命名为 <code>rectangle</code> 的文件夹。在 <code>rectangle</code> 文件夹中，所有文件都会以 <code>package rectangle</code> 作为开头，因为它们都属于 rectangle 包。</p>
 <p>在我们之前创建的 rectangle 文件夹中，再创建一个名为 <code>rectprops.go</code> 的文件，添加下列代码。</p>
-<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// rectprops.go</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// rectprops.go</span>
 <span class="token keyword">package</span> rectangle
 
 <span class="token keyword">import</span> <span class="token string">"math"</span>
 
-<span class="token keyword">func</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">&#123;</span>  
     area <span class="token operator">:=</span> <span class="token builtin">len</span> <span class="token operator">*</span> wid
     <span class="token keyword">return</span> area
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">Diagonal</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">Diagonal</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">&#123;</span>  
     diagonal <span class="token operator">:=</span> math<span class="token punctuation">.</span><span class="token function">Sqrt</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">len</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>wid <span class="token operator">*</span> wid<span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> diagonal
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的代码中，我们创建了两个函数用于计算 <code>Area</code> 和 <code>Diagonal</code>。矩形的面积是长和宽的乘积。矩形的对角线是长与宽平方和的平方根。<code>math</code> 包下面的 <code>Sqrt</code> 函数用于计算平方根。</p>
 <p>注意到函数 Area 和 Diagonal 都是以大写字母开头的。这是有必要的，我们将会很快解释为什么需要这样做。</p>
 <h3 id="导入自定义包"><a href="#导入自定义包" class="headerlink" title="导入自定义包"></a>导入自定义包</h3><p>为了使用自定义包，我们必须要先导入它。导入自定义包的语法为 <code>import path</code>。我们必须指定自定义包相对于工作区内 <code>src</code> 文件夹的相对路径。我们目前的文件夹结构是：</p>
-<pre><code>src
+<pre class="line-numbers language-none"><code class="language-none">src
     geometry
         geometry.go
         rectangle
-            rectprops.go
-</code></pre>
+            rectprops.go<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>import &quot;geometry/rectangle&quot;</code> 这一行会导入 rectangle 包。</p>
 <p>在 <code>geometry.go</code> 里面添加下面的代码：</p>
-<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// geometry.go</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// geometry.go</span>
 <span class="token keyword">package</span> main 
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
-    <span class="token string">"geometry/rectangle"</span> <span class="token comment" spellcheck="true">// 导入自定义包</span>
+    <span class="token string">"geometry/rectangle"</span> <span class="token comment">// 导入自定义包</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">var</span> rectLen<span class="token punctuation">,</span> rectWidth <span class="token builtin">float64</span> <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Geometrical shape properties"</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">/*Area function of rectangle package used*/</span>
+    <span class="token comment">/*Area function of rectangle package used*/</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"area of rectangle %.2f\n"</span><span class="token punctuation">,</span> rectangle<span class="token punctuation">.</span><span class="token function">Area</span><span class="token punctuation">(</span>rectLen<span class="token punctuation">,</span> rectWidth<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">/*Diagonal function of rectangle package used*/</span>
+    <span class="token comment">/*Diagonal function of rectangle package used*/</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"diagonal of the rectangle %.2f "</span><span class="token punctuation">,</span> rectangle<span class="token punctuation">.</span><span class="token function">Diagonal</span><span class="token punctuation">(</span>rectLen<span class="token punctuation">,</span> rectWidth<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面的代码导入了 <code>rectangle</code> 包，并调用了里面的 Area 和 Diagonal 函数，得到矩形的面积和对角线。Printf 内的格式说明符 <code>%.2f</code> 会将浮点数截断到小数点两位。应用程序的输出为：</p>
-<pre><code>Geometrical shape properties  
+<pre class="line-numbers language-none"><code class="language-none">Geometrical shape properties  
 area of rectangle 42.00  
-diagonal of the rectangle 9.22
-</code></pre>
+diagonal of the rectangle 9.22<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="导出名字（Exported-Names）"><a href="#导出名字（Exported-Names）" class="headerlink" title="导出名字（Exported Names）"></a>导出名字（Exported Names）</h3><p>我们将 rectangle 包中的函数 Area 和 Diagonal 首字母大写。在 Go 中这具有特殊意义。在 Go  中，任何以大写字母开头的变量或者函数都是被导出的名字。其它包只能访问被导出的函数和变量。在这里，我们需要在 main 包中访问 Area 和  Diagonal 函数，因此会将它们的首字母大写。</p>
 <p>在 <code>rectprops.go</code> 中，如果函数名从 <code>Area(len, wid float64)</code> 变为 <code>area(len, wid float64)</code>，并且在 <code>geometry.go</code> 中， <code>rectangle.Area(rectLen, rectWidth)</code> 变为 <code>rectangle.area(rectLen, rectWidth)</code>， 则该程序运行时，编译器会抛出错误 <code>geometry.go:11: cannot refer to unexported name rectangle.area</code>。因为如果想在包外访问一个函数，它应该首字母大写。</p>
 <h3 id="init-函数"><a href="#init-函数" class="headerlink" title="init 函数"></a>init 函数</h3><p>所有包都可以包含一个 <code>init</code> 函数。init 函数不应该有任何返回值类型和参数，在我们的代码中也不能显式地调用它。init 函数的形式如下：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>init 函数可用于执行初始化任务，也可用于在开始执行之前验证程序的正确性。</p>
 <p>包的初始化顺序如下：</p>
 <ol>
@@ -592,63 +602,63 @@ diagonal of the rectangle 9.22
 <p>尽管一个包可能会被导入多次，但是它只会被初始化一次。</p>
 <p>为了理解 init 函数，我们接下来对程序做了一些修改。</p>
 <p>首先在 <code>rectprops.go</code> 文件中添加了一个 init 函数。</p>
-<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// rectprops.go</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// rectprops.go</span>
 <span class="token keyword">package</span> rectangle
 
 <span class="token keyword">import</span> <span class="token string">"math"</span>  
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token comment" spellcheck="true">/*
+<span class="token comment">/*
  * init function added
  */</span>
-<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"rectangle package initialized"</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">&#123;</span>  
     area <span class="token operator">:=</span> <span class="token builtin">len</span> <span class="token operator">*</span> wid
     <span class="token keyword">return</span> area
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">Diagonal</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">Diagonal</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> wid <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">&#123;</span>  
     diagonal <span class="token operator">:=</span> math<span class="token punctuation">.</span><span class="token function">Sqrt</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">len</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>wid <span class="token operator">*</span> wid<span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> diagonal
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们添加了一个简单的 init 函数，它仅打印 <code>rectangle package initialized</code>。</p>
 <p>现在我们来修改 main 包。我们知道矩形的长和宽都应该大于 0，我们将在 <code>geometry.go</code> 中使用 init 函数和包级别的变量来检查矩形的长和宽。</p>
 <p>修改 <code>geometry.go</code> 文件如下所示：</p>
-<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// geometry.go</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// geometry.go</span>
 <span class="token keyword">package</span> main 
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
-    <span class="token string">"geometry/rectangle"</span> <span class="token comment" spellcheck="true">// 导入自定义包</span>
+    <span class="token string">"geometry/rectangle"</span> <span class="token comment">// 导入自定义包</span>
     <span class="token string">"log"</span>
 <span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">/*
+<span class="token comment">/*
  * 1. 包级别变量
 */</span>
 <span class="token keyword">var</span> rectLen<span class="token punctuation">,</span> rectWidth <span class="token builtin">float64</span> <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span> 
 
-<span class="token comment" spellcheck="true">/*
+<span class="token comment">/*
 *2. init 函数会检查长和宽是否大于0
 */</span>
-<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"main package initialized"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> rectLen <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> rectLen <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
         log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span><span class="token string">"length is less than zero"</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> rectWidth <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> rectWidth <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
         log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span><span class="token string">"width is less than zero"</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Geometrical shape properties"</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"area of rectangle %.2f\n"</span><span class="token punctuation">,</span> rectangle<span class="token punctuation">.</span><span class="token function">Area</span><span class="token punctuation">(</span>rectLen<span class="token punctuation">,</span> rectWidth<span class="token punctuation">)</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"diagonal of the rectangle %.2f "</span><span class="token punctuation">,</span>rectangle<span class="token punctuation">.</span><span class="token function">Diagonal</span><span class="token punctuation">(</span>rectLen<span class="token punctuation">,</span> rectWidth<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们对 <code>geometry.go</code> 做了如下修改：</p>
 <ol>
 <li>变量 <strong>rectLen</strong> 和 <strong>rectWidth</strong> 从 main 函数级别移到了包级别。</li>
@@ -662,58 +672,58 @@ diagonal of the rectangle 9.22
 <li>最后调用 main 函数。</li>
 </ol>
 <p>当运行该程序时，会有如下输出。</p>
-<pre><code>rectangle package initialized  
+<pre class="line-numbers language-none"><code class="language-none">rectangle package initialized  
 main package initialized  
 Geometrical shape properties  
 area of rectangle 42.00  
-diagonal of the rectangle 9.22
-</code></pre>
+diagonal of the rectangle 9.22<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>果然，程序会首先调用 rectangle 包的 init 函数，然后，会初始化包级别的变量 <strong>rectLen</strong> 和 <strong>rectWidth</strong>。接着调用 main 包里的 init 函数，该函数检查 rectLen 和 rectWidth 是否小于 0，如果条件为真，则终止程序。我们会在单独的教程里深入学习 if 语句。现在你可以认为 <code>if rectLen &lt; 0</code> 能够检查 <code>rectLen</code> 是否小于 0，并且如果是，则终止程序。<code>rectWidth</code> 条件的编写也是类似的。在这里两个条件都为假，因此程序继续执行。最后调用了 main 函数。</p>
 <p>让我们接着稍微修改这个程序来学习使用 init 函数。</p>
 <p>将 <code>geometry.go</code> 中的 <code>var rectLen, rectWidth float64 = 6, 7</code> 改为 <code>var rectLen, rectWidth float64 = -6, 7</code>。我们把 <code>rectLen</code> 初始化为负数。</p>
 <p>现在当运行程序时，会得到：</p>
-<pre><code>rectangle package initialized  
+<pre class="line-numbers language-none"><code class="language-none">rectangle package initialized  
 main package initialized  
-2017/04/04 00:28:20 length is less than zero
-</code></pre>
+2017&#x2F;04&#x2F;04 00:28:20 length is less than zero<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>像往常一样， 会首先初始化 rectangle 包，然后是 main 包中的包级别的变量 rectLen 和 rectWidth。rectLen 为负数，因此当运行 init 函数时，程序在打印 <code>length is less than zero</code> 后终止。</p>
 <h3 id="使用空白标识符（Blank-Identifier）"><a href="#使用空白标识符（Blank-Identifier）" class="headerlink" title="使用空白标识符（Blank Identifier）"></a>使用空白标识符（Blank Identifier）</h3><p>导入了包，却不在代码中使用它，这在 Go 中是非法的。当这么做时，编译器是会报错的。其原因是为了避免导入过多未使用的包，从而导致编译时间显著增加。将 <code>geometry.go</code> 中的代码替换为如下代码：</p>
-<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// geometry.go</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// geometry.go</span>
 <span class="token keyword">package</span> main 
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
-    <span class="token string">"geometry/rectangle"</span> <span class="token comment" spellcheck="true">// 导入自定的包</span>
+    <span class="token string">"geometry/rectangle"</span> <span class="token comment">// 导入自定的包</span>
 <span class="token punctuation">)</span>
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面的程序将会抛出错误 <code>geometry.go:6: imported and not used: &quot;geometry/rectangle&quot;</code>。</p>
 <p>然而，在程序开发的活跃阶段，又常常会先导入包，而暂不使用它。遇到这种情况就可以使用空白标识符 <code>_</code>。</p>
 <p>下面的代码可以避免上述程序的错误：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"geometry/rectangle"</span> 
 <span class="token punctuation">)</span>
 
-<span class="token keyword">var</span> <span class="token boolean">_</span> <span class="token operator">=</span> rectangle<span class="token punctuation">.</span>Area <span class="token comment" spellcheck="true">// 错误屏蔽器</span>
+<span class="token keyword">var</span> <span class="token boolean">_</span> <span class="token operator">=</span> rectangle<span class="token punctuation">.</span>Area <span class="token comment">// 错误屏蔽器</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>var _ = rectangle.Area</code> 这一行屏蔽了错误。我们应该了解这些错误屏蔽器（Error Silencer）的动态，在程序开发结束时就移除它们，包括那些还没有使用过的包。由此建议在 import 语句下面的包级别范围中写上错误屏蔽器。</p>
 <p>有时候我们导入一个包，只是为了确保它进行了初始化，而无需使用包中的任何函数或变量。例如，我们或许需要确保调用了 rectangle 包的 init 函数，而不需要在代码中使用它。这种情况也可以使用空白标识符，如下所示。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main 
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main 
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
     <span class="token boolean">_</span> <span class="token string">"geometry/rectangle"</span> 
 <span class="token punctuation">)</span>
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>运行上面的程序，会输出 <code>rectangle package initialized</code>。尽管在所有代码里，我们都没有使用这个包，但还是成功初始化了它。</p>
 
                 
@@ -802,8 +812,136 @@ main package initialized
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -832,7 +970,7 @@ main package initialized
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="if-else语句">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="if-else语句">
                         
                         <span class="card-title">if-else语句</span>
                     </div>
@@ -881,7 +1019,7 @@ main package initialized
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="函数function">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="函数function">
                         
                         <span class="card-title">函数function</span>
                     </div>
@@ -1106,13 +1244,16 @@ main package initialized
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1141,9 +1282,9 @@ main package initialized
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1365,7 +1506,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     

@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="kopa" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -308,19 +308,6 @@
 </header>
 
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
 
 
 
@@ -462,16 +449,39 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-02-10
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -487,190 +497,190 @@
 <h2 id="通过嵌套结构体进行组合"><a href="#通过嵌套结构体进行组合" class="headerlink" title="通过嵌套结构体进行组合"></a>通过嵌套结构体进行组合</h2><p>在 Go 中，通过在结构体内嵌套结构体，可以实现组合。</p>
 <p>组合的典型例子就是博客帖子。每一个博客的帖子都有标题、内容和作者信息。使用组合可以很好地表示它们。通过学习本教程后面的内容，我们会知道如何实现组合。</p>
 <p>我们首先创建一个 <code>author</code> 结构体。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> author <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> author <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName <span class="token builtin">string</span>
     lastName  <span class="token builtin">string</span>
     bio       <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a author<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a author<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"%s %s"</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span> a<span class="token punctuation">.</span>lastName<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的代码片段中，我们创建了一个 <code>author</code> 结构体，<code>author</code> 的字段有 <code>firstname</code>、<code>lastname</code> 和 <code>bio</code>。我们还添加了一个 <code>fullName()</code> 方法，其中 <code>author</code> 作为接收者类型，该方法返回了作者的全名。</p>
 <p>下一步我们创建 <code>post</code> 结构体。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> post <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> post <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     title     <span class="token builtin">string</span>
     content   <span class="token builtin">string</span>
     author
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Title: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Content: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Author: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>author<span class="token punctuation">.</span><span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Bio: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>author<span class="token punctuation">.</span>bio<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>post</code> 结构体的字段有 <code>title</code> 和 <code>content</code>。它还有一个嵌套的匿名字段 <code>author</code>。该字段指定 <code>author</code> 组成了 <code>post</code> 结构体。现在 <code>post</code> 可以访问 <code>author</code> 结构体的所有字段和方法。我们同样给 <code>post</code> 结构体添加了 <code>details()</code> 方法，用于打印标题、内容和作者的全名与简介。</p>
 <p>一旦结构体内嵌套了一个结构体字段，Go 可以使我们访问其嵌套的字段，好像这些字段属于外部结构体一样。所以上面第 11 行的 <code>p.author.fullName()</code> 可以替换为 <code>p.fullName()</code>。于是，<code>details()</code> 方法可以重写，如下所示：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Title: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Content: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Author: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Bio: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>bio<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>现在，我们的 <code>author</code> 和 <code>post</code> 结构体都已准备就绪，我们来创建一个博客帖子来完成这个程序。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> author <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> author <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName <span class="token builtin">string</span>
     lastName  <span class="token builtin">string</span>
     bio       <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a author<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a author<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"%s %s"</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span> a<span class="token punctuation">.</span>lastName<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> post <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> post <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     title   <span class="token builtin">string</span>
     content <span class="token builtin">string</span>
     author
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Title: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Content: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Author: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Bio: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>bio<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    author1 <span class="token operator">:=</span> author<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    author1 <span class="token operator">:=</span> author<span class="token punctuation">&#123;</span>
         <span class="token string">"Naveen"</span><span class="token punctuation">,</span>
         <span class="token string">"Ramanathan"</span><span class="token punctuation">,</span>
         <span class="token string">"Golang Enthusiast"</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    post1 <span class="token operator">:=</span> post<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    post1 <span class="token operator">:=</span> post<span class="token punctuation">&#123;</span>
         <span class="token string">"Inheritance in Go"</span><span class="token punctuation">,</span>
         <span class="token string">"Go supports composition instead of inheritance"</span><span class="token punctuation">,</span>
         author1<span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     post1<span class="token punctuation">.</span><span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面程序中，main 函数在第 31 行新建了一个 <code>author</code> 结构体变量。而在第 36 行，我们通过嵌套 <code>author1</code> 来创建一个 <code>post</code>。该程序输出：</p>
-<pre class=" language-bash"><code class="language-bash">Title:  Inheritance <span class="token keyword">in</span> Go  
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Title:  Inheritance <span class="token keyword">in</span> Go  
 Content:  Go supports composition instead of inheritance  
 Author:  Naveen Ramanathan  
-Bio:  Golang Enthusiast
-</code></pre>
+Bio:  Golang Enthusiast<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="结构体切片的嵌套"><a href="#结构体切片的嵌套" class="headerlink" title="结构体切片的嵌套"></a>结构体切片的嵌套</h2><p>我们可以进一步处理这个示例，使用博客帖子的切片来创建一个网站。</p>
 <p>我们首先定义 <code>website</code> 结构体。请在上述代码里的 main 函数中，添加下面的代码，并运行它。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> website <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> website <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
         <span class="token punctuation">[</span><span class="token punctuation">]</span>post
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>w website<span class="token punctuation">)</span> <span class="token function">contents</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>w website<span class="token punctuation">)</span> <span class="token function">contents</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Contents of Website\n"</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> w<span class="token punctuation">.</span>posts <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> w<span class="token punctuation">.</span>posts <span class="token punctuation">&#123;</span>
         v<span class="token punctuation">.</span><span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在你添加上述代码后，当你运行程序时，编译器将会报错，如下所示：</p>
-<pre class=" language-bash"><code class="language-bash">main.go:31:9: syntax error: unexpected <span class="token punctuation">[</span>, expecting field name or embedded <span class="token function">type</span>
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">main.go:31:9: syntax error: unexpected <span class="token punctuation">[</span>, expecting field name or embedded <span class="token builtin class-name">type</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>这项错误指出了嵌套的结构体切片 <code>[]post</code>。错误的原因是结构体不能嵌套一个匿名切片。我们需要一个字段名。所以我们来修复这个错误，让编译器顺利通过。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> website <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> website <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
         posts <span class="token punctuation">[</span><span class="token punctuation">]</span>post
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>可以看到，我给帖子的切片 <code>[]post</code> 添加了字段名 <code>posts</code>。</p>
 <p>现在我们来修改主函数，为我们的新网站创建一些帖子吧。</p>
 <p>修改后的完整代码如下所示：</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">type</span> author <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> author <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     firstName <span class="token builtin">string</span>
     lastName  <span class="token builtin">string</span>
     bio       <span class="token builtin">string</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a author<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a author<span class="token punctuation">)</span> <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">return</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"%s %s"</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>firstName<span class="token punctuation">,</span> a<span class="token punctuation">.</span>lastName<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> post <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> post <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
     title   <span class="token builtin">string</span>
     content <span class="token builtin">string</span>
     author
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p post<span class="token punctuation">)</span> <span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Title: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Content: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Author: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Bio: "</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>bio<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">type</span> website <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token keyword">type</span> website <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>  
  posts <span class="token punctuation">[</span><span class="token punctuation">]</span>post
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>w website<span class="token punctuation">)</span> <span class="token function">contents</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>w website<span class="token punctuation">)</span> <span class="token function">contents</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Contents of Website\n"</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> w<span class="token punctuation">.</span>posts <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> w<span class="token punctuation">.</span>posts <span class="token punctuation">&#123;</span>
         v<span class="token punctuation">.</span><span class="token function">details</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    author1 <span class="token operator">:=</span> author<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    author1 <span class="token operator">:=</span> author<span class="token punctuation">&#123;</span>
         <span class="token string">"Naveen"</span><span class="token punctuation">,</span>
         <span class="token string">"Ramanathan"</span><span class="token punctuation">,</span>
         <span class="token string">"Golang Enthusiast"</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    post1 <span class="token operator">:=</span> post<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    post1 <span class="token operator">:=</span> post<span class="token punctuation">&#123;</span>
         <span class="token string">"Inheritance in Go"</span><span class="token punctuation">,</span>
         <span class="token string">"Go supports composition instead of inheritance"</span><span class="token punctuation">,</span>
         author1<span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    post2 <span class="token operator">:=</span> post<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    post2 <span class="token operator">:=</span> post<span class="token punctuation">&#123;</span>
         <span class="token string">"Struct instead of Classes in Go"</span><span class="token punctuation">,</span>
         <span class="token string">"Go does not support classes but methods can be added to structs"</span><span class="token punctuation">,</span>
         author1<span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    post3 <span class="token operator">:=</span> post<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    post3 <span class="token operator">:=</span> post<span class="token punctuation">&#123;</span>
         <span class="token string">"Concurrency"</span><span class="token punctuation">,</span>
         <span class="token string">"Go is a concurrent language and not a parallel one"</span><span class="token punctuation">,</span>
         author1<span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    w <span class="token operator">:=</span> website<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        posts<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>post<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>post1<span class="token punctuation">,</span> post2<span class="token punctuation">,</span> post3<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    w <span class="token operator">:=</span> website<span class="token punctuation">&#123;</span>
+        posts<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>post<span class="token punctuation">&#123;</span>post1<span class="token punctuation">,</span> post2<span class="token punctuation">,</span> post3<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
     w<span class="token punctuation">.</span><span class="token function">contents</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在上面的主函数中，我们创建了一个作者 <code>author1</code>，以及三个帖子 <code>post1</code>、<code>post2</code> 和 <code>post3</code>。我们最后通过嵌套三个帖子，在第 62 行创建了网站 <code>w</code>，并在下一行显示内容。</p>
 <p>程序会输出：</p>
-<pre class=" language-bash"><code class="language-bash">Contents of Website
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Contents of Website
 
 Title:  Inheritance <span class="token keyword">in</span> Go  
 Content:  Go supports composition instead of inheritance  
@@ -685,9 +695,7 @@ Bio:  Golang Enthusiast
 Title:  Concurrency  
 Content:  Go is a concurrent language and not a parallel one  
 Author:  Naveen Ramanathan  
-Bio:  Golang Enthusiast
-</code></pre>
-
+Bio:  Golang Enthusiast<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -770,8 +778,136 @@ Bio:  Golang Enthusiast
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -796,7 +932,7 @@ Bio:  Golang Enthusiast
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/17/golang/26.jie-gou-ti-qu-dai-lei/">
+                <a href="/2019/06/17/golang/25.mutex/">
                     <div class="card-image">
                         
                         
@@ -833,7 +969,7 @@ Bio:  Golang Enthusiast
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/17/golang/28.duo-tai/">
+                <a href="/2019/06/17/golang/26.jie-gou-ti-qu-dai-lei/">
                     <div class="card-image">
                         
                         
@@ -1050,13 +1186,16 @@ Bio:  Golang Enthusiast
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2019-2021</span>
             
-            <span id="year">2021</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">kopa</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">73.1k</span>&nbsp;字
             
             
             
@@ -1085,9 +1224,9 @@ Bio:  Golang Enthusiast
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2021";
-                    var startMonth = "1";
-                    var startDate = "18";
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "12";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1309,7 +1448,8 @@ $(function () {
 
     
 
-	
+    <!--腾讯兔小巢-->
+    
     
 
     
