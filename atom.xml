@@ -70,6 +70,29 @@
   </entry>
   
   <entry>
+    <title>django中pymysql问题</title>
+    <link href="https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/"/>
+    <id>https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/</id>
+    <published>2021-03-01T03:00:07.000Z</published>
+    <updated>2021-03-04T07:34:29.200Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;找不到mysqlclient&quot;&gt;&lt;a href=&quot;#找不到mysqlclient&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://kopa-kongpan.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>linux常用命令</title>
     <link href="https://kopa-kongpan.github.io/2021/03/01/linux-ming-ling/"/>
     <id>https://kopa-kongpan.github.io/2021/03/01/linux-ming-ling/</id>
@@ -89,29 +112,6 @@
     
     
     <category term="Liunx" scheme="https://kopa-kongpan.github.io/categories/Liunx/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>django中pymysql问题</title>
-    <link href="https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/"/>
-    <id>https://kopa-kongpan.github.io/2021/03/01/pymysql-wen-ti/</id>
-    <published>2021-03-01T03:00:07.000Z</published>
-    <updated>2021-03-04T07:34:29.200Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;找不到mysqlclient&quot;&gt;&lt;a href=&quot;#找不到mysqlclient&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="python" scheme="https://kopa-kongpan.github.io/categories/python/"/>
     
     
   </entry>
