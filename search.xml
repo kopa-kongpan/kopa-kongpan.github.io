@@ -36,25 +36,6 @@
     
     
     <entry>
-      <title>django中pymysql问题</title>
-      <link href="2021/03/01/pymysql-wen-ti/"/>
-      <url>2021/03/01/pymysql-wen-ti/</url>
-      
-        <content type="html"><![CDATA[<h3 id="找不到mysqlclient"><a href="#找不到mysqlclient" class="headerlink" title="找不到mysqlclient"></a>找不到mysqlclient</h3><p>django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module. Did you install mysqlclient?</p><p>解决方法<br>项目（settings.py同级)目录中<strong>init</strong>.py中添加</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pymysql<span class="token comment"># 加上version, 避免django版本过高而导致不匹配</span><span class="token comment">#</span><span class="token comment"># 本机  django==2.2.0,  pymysql==0.9.3</span>pymysql<span class="token punctuation">.</span>version_info <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token string">'final'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>linux常用命令</title>
       <link href="2021/03/01/linux-ming-ling/"/>
       <url>2021/03/01/linux-ming-ling/</url>
@@ -65,6 +46,25 @@
       <categories>
           
           <category> Liunx </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>django中pymysql问题</title>
+      <link href="2021/03/01/pymysql-wen-ti/"/>
+      <url>2021/03/01/pymysql-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h3 id="找不到mysqlclient"><a href="#找不到mysqlclient" class="headerlink" title="找不到mysqlclient"></a>找不到mysqlclient</h3><p>django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module. Did you install mysqlclient?</p><p>解决方法<br>项目（settings.py同级)目录中<strong>init</strong>.py中添加</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pymysql<span class="token comment"># 加上version, 避免django版本过高而导致不匹配</span><span class="token comment">#</span><span class="token comment"># 本机  django==2.2.0,  pymysql==0.9.3</span>pymysql<span class="token punctuation">.</span>version_info <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token string">'final'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
           
       </categories>
       
