@@ -472,7 +472,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/06/17/golang/26.jie-gou-ti-qu-dai-lei/">
+                        <a href="/2019/06/17/golang/25.mutex/">
                             <div class="card-image">
                                 
                                 
@@ -484,9 +484,7 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    26. 结构体取代类Go 支持面向对象吗？Go 并不是完全面向对象的编程语言。Go 官网回答了 Go 是否是面向对象语言，摘录如下。
-
-可以说是，也可以说不是。虽然 Go 有类型和方法，支持面向对象的编程风格，但却没有类型的层次结构。Go 
+                                    25. Mutex临界区在学习 Mutex 之前，我们需要理解并发编程中临界区（Critical Section）的概念。当程序并发地运行时，多个 [Go 协程]不应该同时访问那些修改共享资源的代码。这些修改共享资源的代码称为临界区。例如，
                                 
                             </div>
                             <div class="publish-info">
@@ -523,7 +521,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/06/17/golang/25.mutex/">
+                        <a href="/2019/06/17/golang/26.jie-gou-ti-qu-dai-lei/">
                             <div class="card-image">
                                 
                                 
@@ -535,7 +533,9 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    25. Mutex临界区在学习 Mutex 之前，我们需要理解并发编程中临界区（Critical Section）的概念。当程序并发地运行时，多个 [Go 协程]不应该同时访问那些修改共享资源的代码。这些修改共享资源的代码称为临界区。例如，
+                                    26. 结构体取代类Go 支持面向对象吗？Go 并不是完全面向对象的编程语言。Go 官网回答了 Go 是否是面向对象语言，摘录如下。
+
+可以说是，也可以说不是。虽然 Go 有类型和方法，支持面向对象的编程风格，但却没有类型的层次结构。Go 
                                 
                             </div>
                             <div class="publish-info">
@@ -775,7 +775,7 @@ import
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/06/17/golang/31.zi-ding-yi-cuo-wu/">
+                        <a href="/2019/06/17/golang/32.panic-he-recover/">
                             <div class="card-image">
                                 
                                 
@@ -787,8 +787,8 @@ import
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    31. 自定义错误使用 New 函数创建自定义错误创建自定义错误最简单的方法是使用 [errors]包中的 [New]函数。
-在使用 New [函数]创建自定义错误之前，我们先来看看 New 是如何实现的。如下所示，是 [errors 包]
+                                    32. panic 和 recover什么是 panic？在 Go 语言中，程序中一般是使用[错误]来处理异常情况。对于程序中出现的大部分异常情况，错误就已经够用了。
+但在有些情况，当程序发生异常时，无法继续运行。在这种情况下，我们会使用 
                                 
                             </div>
                             <div class="publish-info">
@@ -825,7 +825,7 @@ import
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/06/17/golang/32.panic-he-recover/">
+                        <a href="/2019/06/17/golang/31.zi-ding-yi-cuo-wu/">
                             <div class="card-image">
                                 
                                 
@@ -837,8 +837,8 @@ import
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    32. panic 和 recover什么是 panic？在 Go 语言中，程序中一般是使用[错误]来处理异常情况。对于程序中出现的大部分异常情况，错误就已经够用了。
-但在有些情况，当程序发生异常时，无法继续运行。在这种情况下，我们会使用 
+                                    31. 自定义错误使用 New 函数创建自定义错误创建自定义错误最简单的方法是使用 [errors]包中的 [New]函数。
+在使用 New [函数]创建自定义错误之前，我们先来看看 New 是如何实现的。如下所示，是 [errors 包]
                                 
                             </div>
                             <div class="publish-info">
