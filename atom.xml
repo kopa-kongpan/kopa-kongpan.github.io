@@ -3,11 +3,11 @@
   <title>kopa</title>
   
   
-  <link href="https://kongpan.xyz/atom.xml" rel="self"/>
+  <link href="https://www.kongpan.xyz/atom.xml" rel="self"/>
   
-  <link href="https://kongpan.xyz/"/>
+  <link href="https://www.kongpan.xyz/"/>
   <updated>2021-03-04T07:36:37.169Z</updated>
-  <id>https://kongpan.xyz/</id>
+  <id>https://www.kongpan.xyz/</id>
   
   <author>
     <name>kopa</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title></title>
-    <link href="https://kongpan.xyz/2021/03/04/golang/gin-huan-jing-an-zhuang/"/>
-    <id>https://kongpan.xyz/2021/03/04/golang/gin-huan-jing-an-zhuang/</id>
+    <link href="https://www.kongpan.xyz/2021/03/04/golang/gin-huan-jing-an-zhuang/"/>
+    <id>https://www.kongpan.xyz/2021/03/04/golang/gin-huan-jing-an-zhuang/</id>
     <published>2021-03-04T07:34:26.554Z</published>
     <updated>2021-03-04T07:36:37.169Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Front-matter</title>
-    <link href="https://kongpan.xyz/2021/03/01/front-matter-xuan-xiang-xiang-jie/"/>
-    <id>https://kongpan.xyz/2021/03/01/front-matter-xuan-xiang-xiang-jie/</id>
+    <link href="https://www.kongpan.xyz/2021/03/01/front-matter-xuan-xiang-xiang-jie/"/>
+    <id>https://www.kongpan.xyz/2021/03/01/front-matter-xuan-xiang-xiang-jie/</id>
     <published>2021-03-01T03:02:07.000Z</published>
     <updated>2021-03-04T08:57:14.349Z</updated>
     
@@ -64,15 +64,15 @@
     
     
     
-    <category term="theme" scheme="https://kongpan.xyz/categories/theme/"/>
+    <category term="theme" scheme="https://www.kongpan.xyz/categories/theme/"/>
     
     
   </entry>
   
   <entry>
     <title>linux常用命令</title>
-    <link href="https://kongpan.xyz/2021/03/01/linux-ming-ling/"/>
-    <id>https://kongpan.xyz/2021/03/01/linux-ming-ling/</id>
+    <link href="https://www.kongpan.xyz/2021/03/01/linux-ming-ling/"/>
+    <id>https://www.kongpan.xyz/2021/03/01/linux-ming-ling/</id>
     <published>2021-03-01T03:00:07.000Z</published>
     <updated>2021-03-02T11:05:49.900Z</updated>
     
@@ -88,15 +88,15 @@
     
     
     
-    <category term="Liunx" scheme="https://kongpan.xyz/categories/Liunx/"/>
+    <category term="Liunx" scheme="https://www.kongpan.xyz/categories/Liunx/"/>
     
     
   </entry>
   
   <entry>
     <title>django中pymysql问题</title>
-    <link href="https://kongpan.xyz/2021/03/01/pymysql-wen-ti/"/>
-    <id>https://kongpan.xyz/2021/03/01/pymysql-wen-ti/</id>
+    <link href="https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/"/>
+    <id>https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/</id>
     <published>2021-03-01T03:00:07.000Z</published>
     <updated>2021-03-04T07:34:29.200Z</updated>
     
@@ -111,15 +111,15 @@
     
     
     
-    <category term="python" scheme="https://kongpan.xyz/categories/python/"/>
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
     
     
   </entry>
   
   <entry>
     <title>读取文件</title>
-    <link href="https://kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/"/>
-    <id>https://kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/</id>
+    <link href="https://www.kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/"/>
+    <id>https://www.kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/</id>
     <published>2019-07-05T03:35:21.000Z</published>
     <updated>2021-03-19T09:26:13.518Z</updated>
     
@@ -134,17 +134,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>反射</title>
-    <link href="https://kongpan.xyz/2019/07/04/golang/34.fan-she/"/>
-    <id>https://kongpan.xyz/2019/07/04/golang/34.fan-she/</id>
+    <link href="https://www.kongpan.xyz/2019/07/04/golang/34.fan-she/"/>
+    <id>https://www.kongpan.xyz/2019/07/04/golang/34.fan-she/</id>
     <published>2019-07-04T03:35:21.000Z</published>
     <updated>2021-03-19T09:25:08.289Z</updated>
     
@@ -159,17 +159,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>函数是一等公民(头等函数)</title>
-    <link href="https://kongpan.xyz/2019/07/03/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/"/>
-    <id>https://kongpan.xyz/2019/07/03/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/</id>
+    <link href="https://www.kongpan.xyz/2019/07/03/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/"/>
+    <id>https://www.kongpan.xyz/2019/07/03/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/</id>
     <published>2019-07-03T03:35:21.000Z</published>
     <updated>2021-03-19T09:24:52.497Z</updated>
     
@@ -184,17 +184,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>panic和recover</title>
-    <link href="https://kongpan.xyz/2019/07/02/golang/32.panic-he-recover/"/>
-    <id>https://kongpan.xyz/2019/07/02/golang/32.panic-he-recover/</id>
+    <link href="https://www.kongpan.xyz/2019/07/02/golang/32.panic-he-recover/"/>
+    <id>https://www.kongpan.xyz/2019/07/02/golang/32.panic-he-recover/</id>
     <published>2019-07-02T03:35:21.000Z</published>
     <updated>2021-03-19T09:21:36.405Z</updated>
     
@@ -209,17 +209,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>自定义错误</title>
-    <link href="https://kongpan.xyz/2019/07/01/golang/31.zi-ding-yi-cuo-wu/"/>
-    <id>https://kongpan.xyz/2019/07/01/golang/31.zi-ding-yi-cuo-wu/</id>
+    <link href="https://www.kongpan.xyz/2019/07/01/golang/31.zi-ding-yi-cuo-wu/"/>
+    <id>https://www.kongpan.xyz/2019/07/01/golang/31.zi-ding-yi-cuo-wu/</id>
     <published>2019-07-01T03:35:21.000Z</published>
     <updated>2021-03-19T09:21:16.925Z</updated>
     
@@ -234,17 +234,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>错误处理</title>
-    <link href="https://kongpan.xyz/2019/06/30/golang/30.cuo-wu-chu-li/"/>
-    <id>https://kongpan.xyz/2019/06/30/golang/30.cuo-wu-chu-li/</id>
+    <link href="https://www.kongpan.xyz/2019/06/30/golang/30.cuo-wu-chu-li/"/>
+    <id>https://www.kongpan.xyz/2019/06/30/golang/30.cuo-wu-chu-li/</id>
     <published>2019-06-30T03:35:21.000Z</published>
     <updated>2021-03-19T09:20:46.377Z</updated>
     
@@ -259,17 +259,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>defer</title>
-    <link href="https://kongpan.xyz/2019/06/29/golang/29.defer/"/>
-    <id>https://kongpan.xyz/2019/06/29/golang/29.defer/</id>
+    <link href="https://www.kongpan.xyz/2019/06/29/golang/29.defer/"/>
+    <id>https://www.kongpan.xyz/2019/06/29/golang/29.defer/</id>
     <published>2019-06-29T03:35:21.000Z</published>
     <updated>2021-03-19T09:20:22.035Z</updated>
     
@@ -284,17 +284,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>多态</title>
-    <link href="https://kongpan.xyz/2019/06/28/golang/28.duo-tai/"/>
-    <id>https://kongpan.xyz/2019/06/28/golang/28.duo-tai/</id>
+    <link href="https://www.kongpan.xyz/2019/06/28/golang/28.duo-tai/"/>
+    <id>https://www.kongpan.xyz/2019/06/28/golang/28.duo-tai/</id>
     <published>2019-06-28T03:35:21.000Z</published>
     <updated>2021-03-19T09:26:15.273Z</updated>
     
@@ -309,17 +309,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>组合取代继承</title>
-    <link href="https://kongpan.xyz/2019/06/27/golang/27.zu-he-qu-dai-ji-cheng/"/>
-    <id>https://kongpan.xyz/2019/06/27/golang/27.zu-he-qu-dai-ji-cheng/</id>
+    <link href="https://www.kongpan.xyz/2019/06/27/golang/27.zu-he-qu-dai-ji-cheng/"/>
+    <id>https://www.kongpan.xyz/2019/06/27/golang/27.zu-he-qu-dai-ji-cheng/</id>
     <published>2019-06-27T03:35:21.000Z</published>
     <updated>2021-03-19T09:19:35.858Z</updated>
     
@@ -334,17 +334,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>结构体取代类</title>
-    <link href="https://kongpan.xyz/2019/06/26/golang/26.jie-gou-ti-qu-dai-lei/"/>
-    <id>https://kongpan.xyz/2019/06/26/golang/26.jie-gou-ti-qu-dai-lei/</id>
+    <link href="https://www.kongpan.xyz/2019/06/26/golang/26.jie-gou-ti-qu-dai-lei/"/>
+    <id>https://www.kongpan.xyz/2019/06/26/golang/26.jie-gou-ti-qu-dai-lei/</id>
     <published>2019-06-26T03:35:21.000Z</published>
     <updated>2021-03-19T09:19:00.583Z</updated>
     
@@ -359,17 +359,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Mutex</title>
-    <link href="https://kongpan.xyz/2019/06/25/golang/25.mutex/"/>
-    <id>https://kongpan.xyz/2019/06/25/golang/25.mutex/</id>
+    <link href="https://www.kongpan.xyz/2019/06/25/golang/25.mutex/"/>
+    <id>https://www.kongpan.xyz/2019/06/25/golang/25.mutex/</id>
     <published>2019-06-25T03:35:21.000Z</published>
     <updated>2021-03-19T09:18:39.831Z</updated>
     
@@ -384,17 +384,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>select</title>
-    <link href="https://kongpan.xyz/2019/06/24/golang/24.select/"/>
-    <id>https://kongpan.xyz/2019/06/24/golang/24.select/</id>
+    <link href="https://www.kongpan.xyz/2019/06/24/golang/24.select/"/>
+    <id>https://www.kongpan.xyz/2019/06/24/golang/24.select/</id>
     <published>2019-06-24T03:35:21.000Z</published>
     <updated>2021-03-19T09:17:58.393Z</updated>
     
@@ -409,17 +409,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>go协程</title>
-    <link href="https://kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/"/>
-    <id>https://kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/</id>
+    <link href="https://www.kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/"/>
+    <id>https://www.kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/</id>
     <published>2019-06-21T03:35:21.000Z</published>
     <updated>2021-03-19T09:16:37.352Z</updated>
     
@@ -434,17 +434,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>并发入门</title>
-    <link href="https://kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/"/>
-    <id>https://kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/</id>
+    <link href="https://www.kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/"/>
+    <id>https://www.kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/</id>
     <published>2019-06-20T03:35:21.000Z</published>
     <updated>2021-03-19T09:09:53.108Z</updated>
     
@@ -460,17 +460,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>接口二</title>
-    <link href="https://kongpan.xyz/2019/06/20/golang/19.jie-kou-er/"/>
-    <id>https://kongpan.xyz/2019/06/20/golang/19.jie-kou-er/</id>
+    <link href="https://www.kongpan.xyz/2019/06/20/golang/19.jie-kou-er/"/>
+    <id>https://www.kongpan.xyz/2019/06/20/golang/19.jie-kou-er/</id>
     <published>2019-06-20T03:34:51.000Z</published>
     <updated>2021-03-04T08:50:05.925Z</updated>
     
@@ -485,17 +485,17 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>接口一</title>
-    <link href="https://kongpan.xyz/2019/06/20/golang/18.jie-kou-yi/"/>
-    <id>https://kongpan.xyz/2019/06/20/golang/18.jie-kou-yi/</id>
+    <link href="https://www.kongpan.xyz/2019/06/20/golang/18.jie-kou-yi/"/>
+    <id>https://www.kongpan.xyz/2019/06/20/golang/18.jie-kou-yi/</id>
     <published>2019-06-20T03:33:51.000Z</published>
     <updated>2021-03-04T08:49:31.510Z</updated>
     
@@ -510,10 +510,10 @@
     
     
     
-    <category term="golang" scheme="https://kongpan.xyz/categories/golang/"/>
+    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
     
     
-    <category term="golang基础" scheme="https://kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
+    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
