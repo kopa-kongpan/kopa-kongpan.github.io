@@ -4,8 +4,8 @@ https://www.kongpan.xyz/2021/03/04/golang/gin-huan-jing-an-zhuang/
 https://www.kongpan.xyz/2021/03/01/front-matter-xuan-xiang-xiang-jie/
 https://www.kongpan.xyz/2021/03/01/linux-ming-ling/
 https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/
-https://www.kongpan.xyz/2021/01/01/mysqldb-shi-yong-fang-shi/
-https://www.kongpan.xyz/2021/01/01/mysql-orm/
+https://www.kongpan.xyz/2021/01/01/mysqldb/
+https://www.kongpan.xyz/2021/01/01/mysqlorm/
 https://www.kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/
 https://www.kongpan.xyz/2019/07/04/golang/34.fan-she/
 https://www.kongpan.xyz/2019/07/03/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/
