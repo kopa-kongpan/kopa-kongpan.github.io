@@ -6,7 +6,7 @@
   <link href="https://www.kongpan.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.kongpan.xyz/"/>
-  <updated>2021-03-04T07:36:37.169Z</updated>
+  <updated>2021-07-02T09:32:15.393Z</updated>
   <id>https://www.kongpan.xyz/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://www.kongpan.xyz/2021/07/01/jian-li/"/>
+    <id>https://www.kongpan.xyz/2021/07/01/jian-li/</id>
+    <published>2021-07-01T05:56:24.861Z</published>
+    <updated>2021-07-02T09:32:15.393Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;个人信息&quot;&gt;&lt;a href=&quot;#个人信息&quot; class=&quot;headerlink&quot; title=&quot;个人信息&quot;&gt;&lt;/a&gt;个人信息&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;孔盼 / 男 / 1995.12.31&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;本科 / 浙江万里学院 /</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>windows定时任务</title>
+    <link href="https://www.kongpan.xyz/2021/05/01/windows-xia-ding-shi-ren-wu/"/>
+    <id>https://www.kongpan.xyz/2021/05/01/windows-xia-ding-shi-ren-wu/</id>
+    <published>2021-05-01T02:00:07.000Z</published>
+    <updated>2021-05-18T13:19:50.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/Gpwner/article/details/77882131&quot;&gt;本文连接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;坑点在于启动程序时的设定,</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -74,7 +122,7 @@
     <link href="https://www.kongpan.xyz/2021/03/01/linux-ming-ling/"/>
     <id>https://www.kongpan.xyz/2021/03/01/linux-ming-ling/</id>
     <published>2021-03-01T03:00:07.000Z</published>
-    <updated>2021-03-02T11:05:49.900Z</updated>
+    <updated>2021-05-18T13:19:37.118Z</updated>
     
     
       
@@ -98,7 +146,7 @@
     <link href="https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/"/>
     <id>https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/</id>
     <published>2021-03-01T03:00:07.000Z</published>
-    <updated>2021-03-04T07:34:29.200Z</updated>
+    <updated>2021-04-01T09:49:21.143Z</updated>
     
     
       
@@ -113,6 +161,57 @@
     
     <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>mysqlDB</title>
+    <link href="https://www.kongpan.xyz/2021/01/01/mysqldb-shi-yong-fang-shi/"/>
+    <id>https://www.kongpan.xyz/2021/01/01/mysqldb-shi-yong-fang-shi/</id>
+    <published>2021-01-01T04:00:07.000Z</published>
+    <updated>2021-07-05T03:15:23.237Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MysqlDB&quot;&gt;&lt;a href=&quot;#MysqlDB&quot; class=&quot;headerlink&quot; title=&quot;MysqlDB&quot;&gt;&lt;/a&gt;MysqlDB&lt;/h1&gt;&lt;p&gt;MysqlDB具有断开自动重连特性，支持多线程下操作，内置连接池，最大连接数100&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://www.kongpan.xyz/categories/mysql/"/>
+    
+    
+    <category term="ORM" scheme="https://www.kongpan.xyz/tags/ORM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysqlDB</title>
+    <link href="https://www.kongpan.xyz/2021/01/01/mysql-orm/"/>
+    <id>https://www.kongpan.xyz/2021/01/01/mysql-orm/</id>
+    <published>2021-01-01T04:00:07.000Z</published>
+    <updated>2021-07-05T03:14:54.505Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://www.kongpan.xyz/categories/mysql/"/>
+    
+    
+    <category term="ORM" scheme="https://www.kongpan.xyz/tags/ORM/"/>
     
   </entry>
   
@@ -404,107 +503,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;24-Select&quot;&gt;&lt;a href=&quot;#24-Select&quot; class=&quot;headerlink&quot; title=&quot;24. Select&quot;&gt;&lt;/a&gt;24. Select&lt;/h1&gt;&lt;h2 id=&quot;什么是-select？&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>go协程</title>
-    <link href="https://www.kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/"/>
-    <id>https://www.kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/</id>
-    <published>2019-06-21T03:35:21.000Z</published>
-    <updated>2021-03-19T09:16:37.352Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;21-Go-协程&quot;&gt;&lt;a href=&quot;#21-Go-协程&quot; class=&quot;headerlink&quot; title=&quot;21. Go 协程&quot;&gt;&lt;/a&gt;21. Go 协程&lt;/h1&gt;&lt;h2 id=&quot;Go-协程是什么？&quot;&gt;&lt;a href=&quot;#Go-协程是什么？&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>并发入门</title>
-    <link href="https://www.kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/"/>
-    <id>https://www.kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/</id>
-    <published>2019-06-20T03:35:21.000Z</published>
-    <updated>2021-03-19T09:09:53.108Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Go 是并发式语言，而不是并行式语言&lt;/strong&gt;。在讨论 Go 如何处理并发之前，我们必须理解何为并发，以及并发与并行的区别。&lt;/p&gt;
-&lt;h2 id=&quot;并发是什么？&quot;&gt;&lt;a href=&quot;#并发是什么？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>接口二</title>
-    <link href="https://www.kongpan.xyz/2019/06/20/golang/19.jie-kou-er/"/>
-    <id>https://www.kongpan.xyz/2019/06/20/golang/19.jie-kou-er/</id>
-    <published>2019-06-20T03:34:51.000Z</published>
-    <updated>2021-03-04T08:50:05.925Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;19-接口（二）&quot;&gt;&lt;a href=&quot;#19-接口（二）&quot; class=&quot;headerlink&quot; title=&quot;19. 接口（二）&quot;&gt;&lt;/a&gt;19. 接口（二）&lt;/h1&gt;&lt;h3 id=&quot;实现接口：指针接受者与值接受者&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>接口一</title>
-    <link href="https://www.kongpan.xyz/2019/06/20/golang/18.jie-kou-yi/"/>
-    <id>https://www.kongpan.xyz/2019/06/20/golang/18.jie-kou-yi/</id>
-    <published>2019-06-20T03:33:51.000Z</published>
-    <updated>2021-03-04T08:49:31.510Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;18-接口（一）&quot;&gt;&lt;a href=&quot;#18-接口（一）&quot; class=&quot;headerlink&quot; title=&quot;18. 接口（一）&quot;&gt;&lt;/a&gt;18. 接口（一）&lt;/h1&gt;&lt;h3 id=&quot;什么是接口？&quot;&gt;&lt;a href=&quot;#什么是接口？&quot;</summary>
         
       
     
