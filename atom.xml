@@ -142,6 +142,29 @@
   </entry>
   
   <entry>
+    <title>Python框架中间件</title>
+    <link href="https://www.kongpan.xyz/2021/03/01/middleware/"/>
+    <id>https://www.kongpan.xyz/2021/03/01/middleware/</id>
+    <published>2021-03-01T03:00:07.000Z</published>
+    <updated>2021-07-06T02:20:04.805Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;api请求装饰器&quot;&gt;&lt;a href=&quot;#api请求装饰器&quot; class=&quot;headerlink&quot; title=&quot;api请求装饰器&quot;&gt;&lt;/a&gt;api请求装饰器&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-python&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>django中pymysql问题</title>
     <link href="https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/"/>
     <id>https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/</id>
@@ -161,6 +184,56 @@
     
     <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>log</title>
+    <link href="https://www.kongpan.xyz/2021/02/01/log/"/>
+    <id>https://www.kongpan.xyz/2021/02/01/log/</id>
+    <published>2021-02-01T06:00:17.000Z</published>
+    <updated>2021-07-06T02:20:00.389Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;日志模块&quot;&gt;&lt;a href=&quot;#日志模块&quot; class=&quot;headerlink&quot; title=&quot;日志模块&quot;&gt;&lt;/a&gt;日志模块&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-python&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+    <category term="log" scheme="https://www.kongpan.xyz/tags/log/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysqlORM</title>
+    <link href="https://www.kongpan.xyz/2021/01/01/mysqlorm/"/>
+    <id>https://www.kongpan.xyz/2021/01/01/mysqlorm/</id>
+    <published>2021-01-01T04:00:07.000Z</published>
+    <updated>2021-07-06T02:20:23.672Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ORM&quot;&gt;&lt;a href=&quot;#ORM&quot; class=&quot;headerlink&quot; title=&quot;ORM&quot;&gt;&lt;/a&gt;ORM&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-python&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://www.kongpan.xyz/categories/mysql/"/>
+    
+    
+    <category term="orm" scheme="https://www.kongpan.xyz/tags/orm/"/>
     
   </entry>
   
@@ -427,82 +500,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;25-Mutex&quot;&gt;&lt;a href=&quot;#25-Mutex&quot; class=&quot;headerlink&quot; title=&quot;25. Mutex&quot;&gt;&lt;/a&gt;25. Mutex&lt;/h1&gt;&lt;h2 id=&quot;临界区&quot;&gt;&lt;a href=&quot;#临界区&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>select</title>
-    <link href="https://www.kongpan.xyz/2019/06/24/golang/24.select/"/>
-    <id>https://www.kongpan.xyz/2019/06/24/golang/24.select/</id>
-    <published>2019-06-24T03:35:21.000Z</published>
-    <updated>2021-03-19T09:17:58.393Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;24-Select&quot;&gt;&lt;a href=&quot;#24-Select&quot; class=&quot;headerlink&quot; title=&quot;24. Select&quot;&gt;&lt;/a&gt;24. Select&lt;/h1&gt;&lt;h2 id=&quot;什么是-select？&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>go协程</title>
-    <link href="https://www.kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/"/>
-    <id>https://www.kongpan.xyz/2019/06/21/golang/21.go-xie-cheng/</id>
-    <published>2019-06-21T03:35:21.000Z</published>
-    <updated>2021-03-19T09:16:37.352Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;21-Go-协程&quot;&gt;&lt;a href=&quot;#21-Go-协程&quot; class=&quot;headerlink&quot; title=&quot;21. Go 协程&quot;&gt;&lt;/a&gt;21. Go 协程&lt;/h1&gt;&lt;h2 id=&quot;Go-协程是什么？&quot;&gt;&lt;a href=&quot;#Go-协程是什么？&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>并发入门</title>
-    <link href="https://www.kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/"/>
-    <id>https://www.kongpan.xyz/2019/06/20/golang/20.bing-fa-ru-men/</id>
-    <published>2019-06-20T03:35:21.000Z</published>
-    <updated>2021-03-19T09:09:53.108Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Go 是并发式语言，而不是并行式语言&lt;/strong&gt;。在讨论 Go 如何处理并发之前，我们必须理解何为并发，以及并发与并行的区别。&lt;/p&gt;
-&lt;h2 id=&quot;并发是什么？&quot;&gt;&lt;a href=&quot;#并发是什么？&quot; class=&quot;headerlink&quot;</summary>
         
       
     
