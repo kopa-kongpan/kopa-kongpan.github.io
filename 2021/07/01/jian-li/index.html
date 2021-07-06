@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    135
+                    801
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -513,9 +513,9 @@
 </li>
 <li><p>手机号码: 17855026994(同微信号))</p>
 </li>
-<li><p>email: <a href="mailto:&#107;&#112;&#x32;&#56;&#48;&#x34;&#x32;&#49;&#x37;&#x37;&#x30;&#x33;&#x40;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#107;&#112;&#x32;&#56;&#48;&#x34;&#x32;&#49;&#x37;&#x37;&#x30;&#x33;&#x40;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a></p>
+<li><p>email: <a href="mailto:&#107;&#112;&#50;&#x38;&#x30;&#x34;&#50;&#49;&#55;&#x37;&#x30;&#x33;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#107;&#112;&#50;&#x38;&#x30;&#x34;&#50;&#49;&#55;&#x37;&#x30;&#x33;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a></p>
 </li>
-<li><p>博客: <a href="http://www.kongpan.xyz/">www.kongpan.xyz</a></p>
+<li><p>博客: <a href="http://www.kongpan.xyz/">www.kongpan.xyz</a>(文件访问密码: 1111)</p>
 </li>
 <li><p>期望职位: Python开发工程师 / 爬虫工程师</p>
 </li>
@@ -526,9 +526,68 @@
 </ul>
 <h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><h2 id="中智-外派网易-2020-07-2021-07"><a href="#中智-外派网易-2020-07-2021-07" class="headerlink" title="中智(外派网易) [2020.07-2021.07]"></a>中智(外派网易) [2020.07-2021.07]</h2><ul>
 <li>职位: 数据-数据挖掘</li>
-<li>技术级别: OP3-3 (试用期不打折)</li>
+<li>技术级别: OP3-3 (无试用期,薪资不打折)</li>
 </ul>
-<h3 id="精细化运营平台"><a href="#精细化运营平台" class="headerlink" title="精细化运营平台"></a>精细化运营平台</h3><p>- </p>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul>
+<li>自定义了token中间件, 跨域中间件, 参数验证中间件…</li>
+<li>迎合业务查询需求, 自定义了ORM框架, 便于联查等需求(<a href="https://www.kongpan.xyz/2021/01/01/mysqlorm/">https://www.kongpan.xyz/2021/01/01/mysqlorm/</a> [密码: 1111])</li>
+<li>mysql_PooledDB, 主要处理各种插入语句(<a href="https://www.kongpan.xyz/2021/01/01/mysqldb/">https://www.kongpan.xyz/2021/01/01/mysqldb/</a> [密码: 1111])</li>
+<li>框架选取django, 有成熟的url路由, 中间件…</li>
+<li>celery+RabbitMQ+Redis, 处理业务需求复杂的功能,旨在速度提升</li>
+<li>部署: docker+nginx+gunicorn</li>
+<li>爬虫:<ul>
+<li>scrapy框架(对于任务状态难以把握, 小型爬虫使用框架比较繁琐,后续废弃使用)</li>
+<li>自我搭建多线程框架threading.Thread(后加入使用阿里老哥爬虫框架feapder)</li>
+<li>redis制作分布式爬取</li>
+<li>asyncio, aiohttp异步爬虫</li>
+</ul>
+</li>
+</ul>
+<h3 id="精细化运营平台"><a href="#精细化运营平台" class="headerlink" title="精细化运营平台"></a>精细化运营平台</h3><h4 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h4><ul>
+<li>数据来源: 公众号, 游戏官网, 游戏平台发布…</li>
+<li>功能: 针对网络文章进行截取, 选取的模块进行维度/标签的标注, 获得某种游戏的成长过程</li>
+</ul>
+<h4 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h4><ul>
+<li>标签管理(游戏相关, 游戏性质相关, 几千条标签)</li>
+<li>维度管理(维度包含小维度包含标签)</li>
+<li>选项标签管理</li>
+<li>任务系统(任务分配, 任务流程, 任务提醒, 协同任务, 任务结果评审修改…)</li>
+<li>工作日报, 周报, 月报</li>
+<li>批量导入录入资料信息</li>
+<li>任务访问权限/修改已打标签内容的权限设置</li>
+<li>游戏模块管理(分类, 游戏时间线, 游戏的发布/更新…)<h4 id="爬虫部分"><a href="#爬虫部分" class="headerlink" title="爬虫部分"></a>爬虫部分</h4></li>
+<li>微信公众号内容爬取(fiddler抓包)</li>
+<li>数据库设计方式(减少数据冗余, 设置索引方便查询. 业务范围比较广, 多表联查较多)</li>
+</ul>
+<h3 id="竞品监控中心"><a href="#竞品监控中心" class="headerlink" title="竞品监控中心"></a>竞品监控中心</h3><h4 id="功能介绍-1"><a href="#功能介绍-1" class="headerlink" title="功能介绍"></a>功能介绍</h4><ul>
+<li>数据来源: steam, google_play, tap…(游戏平台)</li>
+<li>功能: 获取不同平台的游戏数据, 针对性的进行竞品分析</li>
+</ul>
+<h4 id="后端部分-1"><a href="#后端部分-1" class="headerlink" title="后端部分"></a>后端部分</h4><ul>
+<li>游戏分类: [平台]steam,google, tap, 好游快爆… [类型], [热门], [好评],[待测]…</li>
+<li>整合爬虫数据, 根据具体业务需求展示相应的数据情况</li>
+<li>监控游戏管理(不通平台的下载数,在线人数,当前人数…)</li>
+<li>游戏生命周期监控(历史版本, 更新内容, 更新前后的好评/热门变化)</li>
+<li>市场洞察<ul>
+<li>排行榜</li>
+<li>GAC推荐(部门推荐)</li>
+<li>竞品情报系统</li>
+<li>舆情中心</li>
+<li>海外分析</li>
+</ul>
+</li>
+<li>速创小组(游戏测评报告, 测评任务)</li>
+</ul>
+<h4 id="爬虫部分-1"><a href="#爬虫部分-1" class="headerlink" title="爬虫部分"></a>爬虫部分</h4><ul>
+<li>个大平台游戏相关信息爬取<ul>
+<li>js逆向分析, js签名破解</li>
+<li>selenium操作</li>
+<li>代理池搭建(steamDB封ip措施…)</li>
+<li>Chrome Headless</li>
+</ul>
+</li>
+<li>数据库设计</li>
+</ul>
 
                 
             </div>
@@ -855,7 +914,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">70k</span>&nbsp;字
+                class="white-color">67.7k</span>&nbsp;字
             
             
             
