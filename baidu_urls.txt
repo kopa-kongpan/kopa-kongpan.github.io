@@ -6,6 +6,7 @@ https://www.kongpan.xyz/2021/03/01/linux-ming-ling/
 https://www.kongpan.xyz/2021/03/01/middleware/
 https://www.kongpan.xyz/2021/03/01/pymysql-wen-ti/
 https://www.kongpan.xyz/2021/02/01/log/
+https://www.kongpan.xyz/2021/01/01/mysqldb/
 https://www.kongpan.xyz/2021/01/01/mysqlorm/
 https://www.kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/
 https://www.kongpan.xyz/2019/07/04/golang/34.fan-she/
