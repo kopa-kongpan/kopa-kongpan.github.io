@@ -6,7 +6,7 @@
   <link href="https://www.kongpan.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.kongpan.xyz/"/>
-  <updated>2021-07-06T08:07:27.529Z</updated>
+  <updated>2021-07-09T03:08:45.366Z</updated>
   <id>https://www.kongpan.xyz/</id>
   
   <author>
@@ -17,11 +17,246 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>立方根</title>
+    <link href="https://www.kongpan.xyz/2021/07/08/arithmetic/li-fang-gen/"/>
+    <id>https://www.kongpan.xyz/2021/07/08/arithmetic/li-fang-gen/</id>
+    <published>2021-07-07T17:00:07.000Z</published>
+    <updated>2021-07-09T03:08:45.366Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;计算一个数字的立方根，不使用库函数。&lt;/p&gt;
+&lt;p&gt;保留一位小数。&lt;/p&gt;
+&lt;h3 id=&quot;输入描述：&quot;&gt;&lt;a href=&quot;#输入描述：&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>完全数计算</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/wan-quan-shu-ji-suan/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/wan-quan-shu-ji-suan/</id>
+    <published>2021-07-07T11:00:07.000Z</published>
+    <updated>2021-07-08T07:53:45.127Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;完全数（Perfect</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杨辉三角变形</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/yang-hui-san-jiao-bian-xing/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/yang-hui-san-jiao-bian-xing/</id>
+    <published>2021-07-07T10:00:07.000Z</published>
+    <updated>2021-07-08T07:34:27.417Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>四则运算</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/si-ze-yun-suan/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/si-ze-yun-suan/</id>
+    <published>2021-07-07T09:00:07.000Z</published>
+    <updated>2021-07-08T07:01:10.384Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;输入一个表达式（用字符串表示），求这个表达式的值。&lt;/p&gt;
+&lt;p&gt;保证字符串中的有效字符包括[‘0’-‘9’],‘+’,‘-’,</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>统计每个月兔子的总数</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/tong-ji-mei-ge-yue-tu-zi-de-zong-shu/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/tong-ji-mei-ge-yue-tu-zi-de-zong-shu/</id>
+    <published>2021-07-07T08:00:07.000Z</published>
+    <updated>2021-07-08T06:59:51.561Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>汽水瓶</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/qi-shui-ping/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/qi-shui-ping/</id>
+    <published>2021-07-07T07:00:07.000Z</published>
+    <updated>2021-07-08T03:17:53.499Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数字颠倒</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/shu-zi-dian-dao/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/shu-zi-dian-dao/</id>
+    <published>2021-07-07T06:00:07.000Z</published>
+    <updated>2021-07-08T02:40:27.534Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>取近似值</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/qu-jin-si-zhi/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/qu-jin-si-zhi/</id>
+    <published>2021-07-07T05:00:07.000Z</published>
+    <updated>2021-07-08T02:32:43.230Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>求int型正整数在内存中存储时1的个数</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/qiu-int-xing-zheng-zheng-shu-zai-nei-cun-zhong-cun-chu-shi-1-de-ge-shu/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/qiu-int-xing-zheng-zheng-shu-zai-nei-cun-zhong-cun-chu-shi-1-de-ge-shu/</id>
+    <published>2021-07-07T04:00:07.000Z</published>
+    <updated>2021-07-08T02:33:29.644Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;输入一个int型的正整数，计算出该int型数据在内存中存储时1的个数。&lt;/p&gt;
+&lt;h3 id=&quot;输入描述：&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>单词倒排</title>
+    <link href="https://www.kongpan.xyz/2021/07/07/arithmetic/dan-ci-dao-pai/"/>
+    <id>https://www.kongpan.xyz/2021/07/07/arithmetic/dan-ci-dao-pai/</id>
+    <published>2021-07-07T03:00:07.000Z</published>
+    <updated>2021-07-08T02:33:15.595Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://www.kongpan.xyz/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="https://www.kongpan.xyz/2021/07/01/jian-li/"/>
     <id>https://www.kongpan.xyz/2021/07/01/jian-li/</id>
     <published>2021-07-01T05:56:24.861Z</published>
-    <updated>2021-07-06T08:07:27.529Z</updated>
+    <updated>2021-07-08T08:16:13.008Z</updated>
     
     
       
@@ -146,7 +381,7 @@
     <link href="https://www.kongpan.xyz/2021/03/01/middleware/"/>
     <id>https://www.kongpan.xyz/2021/03/01/middleware/</id>
     <published>2021-03-01T03:00:07.000Z</published>
-    <updated>2021-07-06T02:20:04.805Z</updated>
+    <updated>2021-07-07T02:14:03.776Z</updated>
     
     
       
@@ -192,7 +427,7 @@
     <link href="https://www.kongpan.xyz/2021/02/01/log/"/>
     <id>https://www.kongpan.xyz/2021/02/01/log/</id>
     <published>2021-02-01T06:00:17.000Z</published>
-    <updated>2021-07-06T02:20:00.389Z</updated>
+    <updated>2021-07-07T02:14:08.706Z</updated>
     
     
       
@@ -217,7 +452,7 @@
     <link href="https://www.kongpan.xyz/2021/01/01/mysqldb/"/>
     <id>https://www.kongpan.xyz/2021/01/01/mysqldb/</id>
     <published>2021-01-01T04:00:07.000Z</published>
-    <updated>2021-07-07T02:13:16.685Z</updated>
+    <updated>2021-07-07T02:18:04.110Z</updated>
     
     
       
@@ -242,7 +477,7 @@
     <link href="https://www.kongpan.xyz/2021/01/01/mysqlorm/"/>
     <id>https://www.kongpan.xyz/2021/01/01/mysqlorm/</id>
     <published>2021-01-01T04:00:07.000Z</published>
-    <updated>2021-07-06T02:20:23.672Z</updated>
+    <updated>2021-07-07T02:13:57.069Z</updated>
     
     
       
@@ -259,256 +494,6 @@
     
     
     <category term="orm" scheme="https://www.kongpan.xyz/tags/orm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读取文件</title>
-    <link href="https://www.kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/"/>
-    <id>https://www.kongpan.xyz/2019/07/05/golang/35.du-qu-wen-jian/</id>
-    <published>2019-07-05T03:35:21.000Z</published>
-    <updated>2021-03-19T09:26:13.518Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;35-读取文件&quot;&gt;&lt;a href=&quot;#35-读取文件&quot; class=&quot;headerlink&quot; title=&quot;35. 读取文件&quot;&gt;&lt;/a&gt;35. 读取文件&lt;/h1&gt;&lt;p&gt;文件读取是所有编程语言中最常见的操作之一。本教程我们会学习如何使用 Go</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>反射</title>
-    <link href="https://www.kongpan.xyz/2019/07/04/golang/34.fan-she/"/>
-    <id>https://www.kongpan.xyz/2019/07/04/golang/34.fan-she/</id>
-    <published>2019-07-04T03:35:21.000Z</published>
-    <updated>2021-03-19T09:25:08.289Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;34-反射&quot;&gt;&lt;a href=&quot;#34-反射&quot; class=&quot;headerlink&quot; title=&quot;34. 反射&quot;&gt;&lt;/a&gt;34. 反射&lt;/h1&gt;&lt;p&gt;反射是 Go</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数是一等公民(头等函数)</title>
-    <link href="https://www.kongpan.xyz/2019/07/03/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/"/>
-    <id>https://www.kongpan.xyz/2019/07/03/golang/33.han-shu-shi-yi-deng-gong-min-tou-deng-han-shu/</id>
-    <published>2019-07-03T03:35:21.000Z</published>
-    <updated>2021-03-19T09:24:52.497Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;33-函数是一等公民（头等函数）&quot;&gt;&lt;a href=&quot;#33-函数是一等公民（头等函数）&quot; class=&quot;headerlink&quot; title=&quot;33. 函数是一等公民（头等函数）&quot;&gt;&lt;/a&gt;33.</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>panic和recover</title>
-    <link href="https://www.kongpan.xyz/2019/07/02/golang/32.panic-he-recover/"/>
-    <id>https://www.kongpan.xyz/2019/07/02/golang/32.panic-he-recover/</id>
-    <published>2019-07-02T03:35:21.000Z</published>
-    <updated>2021-03-19T09:21:36.405Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;32-panic-和-recover&quot;&gt;&lt;a href=&quot;#32-panic-和-recover&quot; class=&quot;headerlink&quot; title=&quot;32. panic 和 recover&quot;&gt;&lt;/a&gt;32. panic 和 recover&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义错误</title>
-    <link href="https://www.kongpan.xyz/2019/07/01/golang/31.zi-ding-yi-cuo-wu/"/>
-    <id>https://www.kongpan.xyz/2019/07/01/golang/31.zi-ding-yi-cuo-wu/</id>
-    <published>2019-07-01T03:35:21.000Z</published>
-    <updated>2021-03-19T09:21:16.925Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;31-自定义错误&quot;&gt;&lt;a href=&quot;#31-自定义错误&quot; class=&quot;headerlink&quot; title=&quot;31. 自定义错误&quot;&gt;&lt;/a&gt;31. 自定义错误&lt;/h1&gt;&lt;h2 id=&quot;使用-New-函数创建自定义错误&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>错误处理</title>
-    <link href="https://www.kongpan.xyz/2019/06/30/golang/30.cuo-wu-chu-li/"/>
-    <id>https://www.kongpan.xyz/2019/06/30/golang/30.cuo-wu-chu-li/</id>
-    <published>2019-06-30T03:35:21.000Z</published>
-    <updated>2021-03-19T09:20:46.377Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;30-错误处理&quot;&gt;&lt;a href=&quot;#30-错误处理&quot; class=&quot;headerlink&quot; title=&quot;30. 错误处理&quot;&gt;&lt;/a&gt;30. 错误处理&lt;/h1&gt;&lt;h2 id=&quot;什么是错误？&quot;&gt;&lt;a href=&quot;#什么是错误？&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>defer</title>
-    <link href="https://www.kongpan.xyz/2019/06/29/golang/29.defer/"/>
-    <id>https://www.kongpan.xyz/2019/06/29/golang/29.defer/</id>
-    <published>2019-06-29T03:35:21.000Z</published>
-    <updated>2021-03-19T09:20:22.035Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;29-Defer&quot;&gt;&lt;a href=&quot;#29-Defer&quot; class=&quot;headerlink&quot; title=&quot;29. Defer&quot;&gt;&lt;/a&gt;29. Defer&lt;/h1&gt;&lt;h2 id=&quot;什么是-defer？&quot;&gt;&lt;a href=&quot;#什么是-defer？&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多态</title>
-    <link href="https://www.kongpan.xyz/2019/06/28/golang/28.duo-tai/"/>
-    <id>https://www.kongpan.xyz/2019/06/28/golang/28.duo-tai/</id>
-    <published>2019-06-28T03:35:21.000Z</published>
-    <updated>2021-03-19T09:26:15.273Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;28-多态&quot;&gt;&lt;a href=&quot;#28-多态&quot; class=&quot;headerlink&quot; title=&quot;28. 多态&quot;&gt;&lt;/a&gt;28. 多态&lt;/h1&gt;&lt;p&gt;Go 通过[接口]来实现多态。我们已经讨论过，在 Go</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>组合取代继承</title>
-    <link href="https://www.kongpan.xyz/2019/06/27/golang/27.zu-he-qu-dai-ji-cheng/"/>
-    <id>https://www.kongpan.xyz/2019/06/27/golang/27.zu-he-qu-dai-ji-cheng/</id>
-    <published>2019-06-27T03:35:21.000Z</published>
-    <updated>2021-03-19T09:19:35.858Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;27-组合取代继承&quot;&gt;&lt;a href=&quot;#27-组合取代继承&quot; class=&quot;headerlink&quot; title=&quot;27. 组合取代继承&quot;&gt;&lt;/a&gt;27. 组合取代继承&lt;/h1&gt;&lt;p&gt;Go</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>结构体取代类</title>
-    <link href="https://www.kongpan.xyz/2019/06/26/golang/26.jie-gou-ti-qu-dai-lei/"/>
-    <id>https://www.kongpan.xyz/2019/06/26/golang/26.jie-gou-ti-qu-dai-lei/</id>
-    <published>2019-06-26T03:35:21.000Z</published>
-    <updated>2021-03-19T09:19:00.583Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;26-结构体取代类&quot;&gt;&lt;a href=&quot;#26-结构体取代类&quot; class=&quot;headerlink&quot; title=&quot;26. 结构体取代类&quot;&gt;&lt;/a&gt;26. 结构体取代类&lt;/h1&gt;&lt;h2 id=&quot;Go-支持面向对象吗？&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="golang" scheme="https://www.kongpan.xyz/categories/golang/"/>
-    
-    
-    <category term="golang基础" scheme="https://www.kongpan.xyz/tags/golang%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
